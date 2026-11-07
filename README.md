@@ -6,8 +6,10 @@ Terminal apps that share one design language. Go monorepo: apps in `apps/`, shar
 | --- | --- |
 | [**gitmon**](apps/gitmon) | A themeable git TUI with a horizontal commit graph. Like lazygit. |
 | [**slash**](apps/slash) | A two-pane SFTP client with parallel transfers. Like WinSCP. |
+| [**kyro**](apps/kyro) | A local music player with playlists, cover art and hooks. Hi-res and surround through mpv. |
 
 <p align="center"><img src="docs/screenshots/gitmon.svg" alt="gitmon" width="49%"> <img src="docs/screenshots/slash.svg" alt="slash" width="49%"></p>
+<p align="center"><img src="docs/screenshots/kyro-zen.svg" alt="kyro" width="70%"></p>
 
 ## Install
 

@@ -14,8 +14,8 @@
 <text x="83.2" y="53.5" fill="#88c0e0" textLength="8.4" lengthAdjust="spacing" font-weight="bold">n</text>
 <text x="100.0" y="53.5" fill="#2a2d52" textLength="16.8" lengthAdjust="spacing">│ </text>
 <text x="116.8" y="53.5" fill="#e6e6fa" textLength="42.0" lengthAdjust="spacing" font-weight="bold">slop </text>
-<rect x="158.8" y="40.0" width="67.7" height="18.5" fill="#292542"/>
-<text x="158.8" y="53.5" fill="#a78bfa" textLength="67.2" lengthAdjust="spacing" font-weight="bold"> ⎇ main </text>
+<rect x="158.8" y="40.0" width="101.3" height="18.5" fill="#292542"/>
+<text x="158.8" y="53.5" fill="#a78bfa" textLength="100.8" lengthAdjust="spacing" font-weight="bold"> ⎇ kyro/dev </text>
 <text x="948.4" y="53.5" fill="#5d6093" textLength="75.6" lengthAdjust="spacing">◐ nebula </text>
 <text x="16.0" y="71.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">╭</text>
 <text x="24.4" y="71.5" fill="#ac8af7" textLength="8.4" lengthAdjust="spacing">─</text>
@@ -27,13 +27,24 @@
 <text x="192.4" y="71.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="200.8" y="71.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="209.2" y="71.5" fill="#ef79b9" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="226.0" y="71.5" fill="#4ade80" textLength="33.6" lengthAdjust="spacing">✓118</text>
-<text x="259.6" y="71.5" fill="#5d6093" textLength="92.4" lengthAdjust="spacing">/121 staged</text>
+<text x="217.6" y="71.5" fill="#ea7fbc" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="226.0" y="71.5" fill="#e585be" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="234.4" y="71.5" fill="#df8bc1" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="251.2" y="71.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing">✓0</text>
+<text x="268.0" y="71.5" fill="#5d6093" textLength="84.0" lengthAdjust="spacing">/50 staged</text>
 <text x="360.4" y="71.5" fill="#47cfec" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="368.8" y="71.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">╮</text>
 <text x="377.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╭</text>
 <text x="385.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="394.0" y="71.5" fill="#a9abd6" textLength="159.6" lengthAdjust="spacing" font-weight="bold"> .github/workflows/</text>
+<text x="394.0" y="71.5" fill="#a9abd6" textLength="92.4" lengthAdjust="spacing" font-weight="bold"> apps/kyro/</text>
+<text x="494.8" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="503.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="511.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="520.0" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="528.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="536.8" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="545.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="553.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="562.0" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="570.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="578.8" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
@@ -62,283 +73,115 @@
 <text x="772.0" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="780.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="788.8" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="805.6" y="71.5" fill="#5d6093" textLength="134.4" lengthAdjust="spacing">staged · 2 files</text>
-<text x="940.0" y="71.5" fill="#4ade80" textLength="33.6" lengthAdjust="spacing"> +48</text>
-<text x="973.6" y="71.5" fill="#fb7185" textLength="25.2" lengthAdjust="spacing"> −0</text>
+<text x="797.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="805.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="814.0" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="822.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="839.2" y="71.5" fill="#5d6093" textLength="159.6" lengthAdjust="spacing">unstaged · 37 files</text>
 <text x="1007.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="1015.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╮</text>
 <text x="16.0" y="89.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="76.0" width="17.3" height="18.5" fill="#31665d"/>
+<rect x="24.4" y="76.0" width="17.3" height="18.5" fill="#24264a"/>
 <text x="24.4" y="89.5" fill="#f472b6" textLength="16.8" lengthAdjust="spacing">▌ </text>
-<rect x="41.2" y="76.0" width="17.3" height="18.5" fill="#31665d"/>
+<rect x="41.2" y="76.0" width="17.3" height="18.5" fill="#24264a"/>
 <text x="41.2" y="89.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<rect x="58.0" y="76.0" width="151.7" height="18.5" fill="#31665d"/>
-<text x="58.0" y="89.5" fill="#4ade80" textLength="151.2" lengthAdjust="spacing" font-weight="bold">.github/workflows/</text>
-<rect x="209.2" y="76.0" width="17.3" height="18.5" fill="#31665d"/>
-<text x="209.2" y="89.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 2</text>
-<rect x="226.0" y="76.0" width="126.5" height="18.5" fill="#31665d"/>
-<rect x="352.0" y="76.0" width="17.3" height="18.5" fill="#31665d"/>
-<text x="352.0" y="89.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<rect x="58.0" y="76.0" width="84.5" height="18.5" fill="#24264a"/>
+<text x="58.0" y="89.5" fill="#f472b6" textLength="84.0" lengthAdjust="spacing" font-weight="bold">apps/kyro/</text>
+<rect x="142.0" y="76.0" width="25.7" height="18.5" fill="#24264a"/>
+<text x="142.0" y="89.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 37</text>
+<rect x="167.2" y="76.0" width="185.3" height="18.5" fill="#24264a"/>
+<rect x="352.0" y="76.0" width="17.3" height="18.5" fill="#24264a"/>
 <text x="368.8" y="89.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="89.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="385.6" y="76.0" width="17.3" height="18.5" fill="#171932"/>
-<text x="385.6" y="89.5" fill="#e6e6fa" textLength="16.8" lengthAdjust="spacing"> ◇</text>
-<rect x="402.4" y="76.0" width="160.1" height="18.5" fill="#171932"/>
-<text x="402.4" y="89.5" fill="#5d6093" textLength="159.6" lengthAdjust="spacing"> .github/workflows/</text>
-<text x="562.0" y="89.5" fill="#e6e6fa" textLength="50.4" lengthAdjust="spacing" font-weight="bold">ci.yml</text>
-<rect x="620.8" y="76.0" width="395.3" height="18.5" fill="#171932"/>
+<text x="385.6" y="89.5" fill="#5d6093" textLength="75.6" lengthAdjust="spacing"> loading…</text>
 <text x="1015.6" y="89.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="107.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="94.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="94.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="58.0" y="94.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="58.0" y="107.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">A</text>
-<rect x="66.4" y="94.0" width="59.3" height="18.5" fill="#19382e"/>
-<text x="66.4" y="107.5" fill="#4ade80" textLength="58.8" lengthAdjust="spacing"> ci.yml</text>
-<rect x="125.2" y="94.0" width="227.3" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="94.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="107.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="58.0" y="107.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
+<text x="74.8" y="107.5" fill="#f472b6" textLength="75.6" lengthAdjust="spacing" font-weight="bold">internal/</text>
+<text x="150.4" y="107.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 33</text>
 <text x="368.8" y="107.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="107.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<text x="385.6" y="107.5" fill="#5d6093" textLength="184.8" lengthAdjust="spacing" font-style="italic">  new file mode 100644</text>
 <text x="1015.6" y="107.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="125.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="112.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="112.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="58.0" y="112.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="58.0" y="125.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">A</text>
-<rect x="66.4" y="112.0" width="101.3" height="18.5" fill="#19382e"/>
-<text x="66.4" y="125.5" fill="#4ade80" textLength="100.8" lengthAdjust="spacing"> release.yml</text>
-<rect x="167.2" y="112.0" width="185.3" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="112.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="125.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="74.8" y="125.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
+<text x="91.6" y="125.5" fill="#f472b6" textLength="92.4" lengthAdjust="spacing" font-weight="bold">applemusic/</text>
+<text x="184.0" y="125.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 2</text>
 <text x="368.8" y="125.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="125.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="112.0" width="151.7" height="18.5" fill="#1c1b30"/>
-<text x="394.0" y="125.5" fill="#a78bfa" textLength="151.2" lengthAdjust="spacing"> @@ -0,0 +1,21 @@ </text>
-<rect x="545.2" y="112.0" width="470.9" height="18.5" fill="#1c1b30"/>
 <text x="1015.6" y="125.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="143.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<text x="41.2" y="143.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<text x="58.0" y="143.5" fill="#f472b6" textLength="42.0" lengthAdjust="spacing" font-weight="bold">apps/</text>
-<text x="100.0" y="143.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 52</text>
-<text x="352.0" y="143.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing">◐ </text>
+<text x="91.6" y="143.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="143.5" fill="#e6e6fa" textLength="117.6" lengthAdjust="spacing"> applemusic.go</text>
 <text x="368.8" y="143.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="143.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="130.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="143.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        1 </text>
-<rect x="478.0" y="130.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="143.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="130.0" width="67.7" height="18.5" fill="#142726"/>
-<text x="486.4" y="143.5" fill="#e6e6fa" textLength="67.2" lengthAdjust="spacing">name: ci</text>
-<rect x="553.6" y="130.0" width="462.5" height="18.5" fill="#142726"/>
 <text x="1015.6" y="143.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="161.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<text x="58.0" y="161.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<text x="74.8" y="161.5" fill="#f472b6" textLength="58.8" lengthAdjust="spacing" font-weight="bold">gitmon/</text>
-<text x="133.6" y="161.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 25</text>
-<text x="352.0" y="161.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing">◐ </text>
+<text x="91.6" y="161.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="161.5" fill="#e6e6fa" textLength="159.6" lengthAdjust="spacing"> applemusic_test.go</text>
 <text x="368.8" y="161.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="161.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="148.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="161.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        2 </text>
-<rect x="478.0" y="148.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="161.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="148.0" width="529.7" height="18.5" fill="#142726"/>
 <text x="1015.6" y="161.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="179.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="74.8" y="179.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<text x="91.6" y="179.5" fill="#f472b6" textLength="75.6" lengthAdjust="spacing" font-weight="bold">internal/</text>
-<text x="167.2" y="179.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 21</text>
-<text x="352.0" y="179.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing">◐ </text>
+<text x="91.6" y="179.5" fill="#f472b6" textLength="33.6" lengthAdjust="spacing" font-weight="bold">art/</text>
+<text x="125.2" y="179.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 6</text>
 <text x="368.8" y="179.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="179.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="166.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="179.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        3 </text>
-<rect x="478.0" y="166.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="179.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="166.0" width="25.7" height="18.5" fill="#142726"/>
-<text x="486.4" y="179.5" fill="#e6e6fa" textLength="25.2" lengthAdjust="spacing">on:</text>
-<rect x="511.6" y="166.0" width="504.5" height="18.5" fill="#142726"/>
 <text x="1015.6" y="179.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="197.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="184.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="184.0" width="50.9" height="18.5" fill="#19382e"/>
-<rect x="91.6" y="184.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="91.6" y="197.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<rect x="108.4" y="184.0" width="59.3" height="18.5" fill="#19382e"/>
-<text x="108.4" y="197.5" fill="#4ade80" textLength="58.8" lengthAdjust="spacing" font-weight="bold">config/</text>
-<rect x="167.2" y="184.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="167.2" y="197.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 1</text>
-<rect x="184.0" y="184.0" width="168.5" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="184.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="197.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="197.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="197.5" fill="#e6e6fa" textLength="58.8" lengthAdjust="spacing"> art.go</text>
 <text x="368.8" y="197.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="197.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="184.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="197.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        4 </text>
-<rect x="478.0" y="184.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="197.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="184.0" width="59.3" height="18.5" fill="#142726"/>
-<text x="486.4" y="197.5" fill="#e6e6fa" textLength="58.8" lengthAdjust="spacing">  push:</text>
-<rect x="545.2" y="184.0" width="470.9" height="18.5" fill="#142726"/>
 <text x="1015.6" y="197.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="215.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="202.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="202.0" width="67.7" height="18.5" fill="#19382e"/>
-<rect x="108.4" y="202.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="215.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">A</text>
-<rect x="116.8" y="202.0" width="84.5" height="18.5" fill="#19382e"/>
-<text x="116.8" y="215.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing"> config.go</text>
-<rect x="200.8" y="202.0" width="151.7" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="202.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="215.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="215.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="215.5" fill="#e6e6fa" textLength="100.8" lengthAdjust="spacing"> art_test.go</text>
 <text x="368.8" y="215.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="215.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="202.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="215.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        5 </text>
-<rect x="478.0" y="202.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="215.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="202.0" width="168.5" height="18.5" fill="#142726"/>
-<text x="486.4" y="215.5" fill="#e6e6fa" textLength="168.0" lengthAdjust="spacing">    branches: [main]</text>
-<rect x="654.4" y="202.0" width="361.7" height="18.5" fill="#142726"/>
 <text x="1015.6" y="215.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="233.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="220.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="220.0" width="50.9" height="18.5" fill="#19382e"/>
-<rect x="91.6" y="220.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="91.6" y="233.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<rect x="108.4" y="220.0" width="34.1" height="18.5" fill="#19382e"/>
-<text x="108.4" y="233.5" fill="#4ade80" textLength="33.6" lengthAdjust="spacing" font-weight="bold">git/</text>
-<rect x="142.0" y="220.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="142.0" y="233.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 2</text>
-<rect x="158.8" y="220.0" width="193.7" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="220.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="233.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="233.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="233.5" fill="#e6e6fa" textLength="117.6" lengthAdjust="spacing"> diacritics.go</text>
 <text x="368.8" y="233.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="233.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="220.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="233.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        6 </text>
-<rect x="478.0" y="220.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="233.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="220.0" width="126.5" height="18.5" fill="#142726"/>
-<text x="486.4" y="233.5" fill="#e6e6fa" textLength="126.0" lengthAdjust="spacing">  pull_request:</text>
-<rect x="612.4" y="220.0" width="403.7" height="18.5" fill="#142726"/>
 <text x="1015.6" y="233.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="251.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="238.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="238.0" width="67.7" height="18.5" fill="#19382e"/>
-<rect x="108.4" y="238.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="251.5" fill="#60a5fa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">R</text>
-<rect x="116.8" y="238.0" width="67.7" height="18.5" fill="#19382e"/>
-<text x="116.8" y="251.5" fill="#4ade80" textLength="67.2" lengthAdjust="spacing"> diff.go</text>
-<rect x="184.0" y="238.0" width="168.5" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="238.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="251.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="251.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="251.5" fill="#e6e6fa" textLength="75.6" lengthAdjust="spacing"> kitty.go</text>
 <text x="368.8" y="251.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="251.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="238.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="251.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        7 </text>
-<rect x="478.0" y="238.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="251.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="238.0" width="529.7" height="18.5" fill="#142726"/>
 <text x="1015.6" y="251.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="269.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="256.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="256.0" width="67.7" height="18.5" fill="#19382e"/>
-<rect x="108.4" y="256.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="269.5" fill="#60a5fa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">R</text>
-<rect x="116.8" y="256.0" width="59.3" height="18.5" fill="#19382e"/>
-<text x="116.8" y="269.5" fill="#4ade80" textLength="58.8" lengthAdjust="spacing"> git.go</text>
-<rect x="175.6" y="256.0" width="176.9" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="256.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="269.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="269.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="269.5" fill="#e6e6fa" textLength="117.6" lengthAdjust="spacing"> kitty_test.go</text>
 <text x="368.8" y="269.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="269.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="256.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="269.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        8 </text>
-<rect x="478.0" y="256.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="269.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="256.0" width="42.5" height="18.5" fill="#142726"/>
-<text x="486.4" y="269.5" fill="#e6e6fa" textLength="42.0" lengthAdjust="spacing">jobs:</text>
-<rect x="528.4" y="256.0" width="487.7" height="18.5" fill="#142726"/>
 <text x="1015.6" y="269.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="287.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="274.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="274.0" width="50.9" height="18.5" fill="#19382e"/>
-<rect x="91.6" y="274.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="91.6" y="287.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<rect x="108.4" y="274.0" width="50.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="287.5" fill="#4ade80" textLength="50.4" lengthAdjust="spacing" font-weight="bold">graph/</text>
-<rect x="158.8" y="274.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="158.8" y="287.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 2</text>
-<rect x="175.6" y="274.0" width="176.9" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="274.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="287.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="287.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="287.5" fill="#e6e6fa" textLength="84.0" lengthAdjust="spacing"> render.go</text>
 <text x="368.8" y="287.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="287.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="274.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="287.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">        9 </text>
-<rect x="478.0" y="274.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="287.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="274.0" width="67.7" height="18.5" fill="#142726"/>
-<text x="486.4" y="287.5" fill="#e6e6fa" textLength="67.2" lengthAdjust="spacing">  check:</text>
-<rect x="553.6" y="274.0" width="462.5" height="18.5" fill="#142726"/>
 <text x="1015.6" y="287.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="305.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="292.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="292.0" width="67.7" height="18.5" fill="#19382e"/>
-<rect x="108.4" y="292.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="305.5" fill="#60a5fa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">R</text>
-<rect x="116.8" y="292.0" width="76.1" height="18.5" fill="#19382e"/>
-<text x="116.8" y="305.5" fill="#4ade80" textLength="75.6" lengthAdjust="spacing"> graph.go</text>
-<rect x="192.4" y="292.0" width="160.1" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="292.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="305.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="74.8" y="305.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
+<text x="91.6" y="305.5" fill="#f472b6" textLength="75.6" lengthAdjust="spacing" font-weight="bold">dyntheme/</text>
+<text x="167.2" y="305.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing"> 2</text>
 <text x="368.8" y="305.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="305.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="292.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="305.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">       10 </text>
-<rect x="478.0" y="292.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="305.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="292.0" width="109.7" height="18.5" fill="#142726"/>
-<text x="486.4" y="305.5" fill="#e6e6fa" textLength="109.2" lengthAdjust="spacing">    strategy:</text>
-<rect x="595.6" y="292.0" width="420.5" height="18.5" fill="#142726"/>
 <text x="1015.6" y="305.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="323.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="24.4" y="310.0" width="17.3" height="18.5" fill="#19382e"/>
-<rect x="41.2" y="310.0" width="67.7" height="18.5" fill="#19382e"/>
-<rect x="108.4" y="310.0" width="8.9" height="18.5" fill="#19382e"/>
-<text x="108.4" y="323.5" fill="#60a5fa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">R</text>
-<rect x="116.8" y="310.0" width="118.1" height="18.5" fill="#19382e"/>
-<text x="116.8" y="323.5" fill="#4ade80" textLength="117.6" lengthAdjust="spacing"> graph_test.go</text>
-<rect x="234.4" y="310.0" width="118.1" height="18.5" fill="#19382e"/>
-<rect x="352.0" y="310.0" width="17.3" height="18.5" fill="#19382e"/>
-<text x="352.0" y="323.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing" font-weight="bold">✓ </text>
+<text x="91.6" y="323.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="323.5" fill="#e6e6fa" textLength="100.8" lengthAdjust="spacing"> dyntheme.go</text>
 <text x="368.8" y="323.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="323.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="310.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="323.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">       11 </text>
-<rect x="478.0" y="310.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="323.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="310.0" width="109.7" height="18.5" fill="#142726"/>
-<text x="486.4" y="323.5" fill="#e6e6fa" textLength="109.2" lengthAdjust="spacing">      matrix:</text>
-<rect x="595.6" y="310.0" width="420.5" height="18.5" fill="#142726"/>
 <text x="1015.6" y="323.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="341.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
-<text x="91.6" y="341.5" fill="#5d6093" textLength="16.8" lengthAdjust="spacing">▾ </text>
-<text x="108.4" y="341.5" fill="#f472b6" textLength="25.2" lengthAdjust="spacing" font-weight="bold">ui/</text>
-<text x="133.6" y="341.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing"> 16</text>
-<text x="352.0" y="341.5" fill="#4ade80" textLength="16.8" lengthAdjust="spacing">◐ </text>
+<text x="91.6" y="341.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">U</text>
+<text x="100.0" y="341.5" fill="#e6e6fa" textLength="142.8" lengthAdjust="spacing"> dyntheme_test.go</text>
 <text x="368.8" y="341.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="377.2" y="341.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="394.0" y="328.0" width="84.5" height="18.5" fill="#142726"/>
-<text x="394.0" y="341.5" fill="#4ade80" textLength="84.0" lengthAdjust="spacing">       12 </text>
-<rect x="478.0" y="328.0" width="8.9" height="18.5" fill="#142726"/>
-<text x="478.0" y="341.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
-<rect x="486.4" y="328.0" width="344.9" height="18.5" fill="#142726"/>
-<text x="486.4" y="341.5" fill="#e6e6fa" textLength="344.4" lengthAdjust="spacing">        os: [ubuntu-latest, macos-latest]</text>
-<rect x="830.8" y="328.0" width="185.3" height="18.5" fill="#142726"/>
 <text x="1015.6" y="341.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="359.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">╰</text>
 <text x="24.4" y="359.5" fill="#ac8af7" textLength="8.4" lengthAdjust="spacing">─</text>
@@ -539,7 +382,7 @@
 <text x="923.2" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="931.6" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="940.0" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="956.8" y="377.5" fill="#5d6093" textLength="42.0" lengthAdjust="spacing">2 / 2</text>
+<text x="956.8" y="377.5" fill="#5d6093" textLength="42.0" lengthAdjust="spacing">4 / 4</text>
 <text x="1007.2" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
 <text x="1015.6" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╮</text>
 <text x="16.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
@@ -549,31 +392,69 @@
 <text x="16.0" y="431.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="1015.6" y="431.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="449.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<rect x="133.6" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<rect x="142.0" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="142.0" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◉</text>
+<rect x="150.4" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<rect x="158.8" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="158.8" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">k</text>
+<rect x="167.2" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="167.2" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">y</text>
+<rect x="175.6" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="175.6" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">r</text>
+<rect x="184.0" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="184.0" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">o</text>
+<rect x="192.4" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="192.4" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">/</text>
+<rect x="200.8" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="200.8" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">d</text>
+<rect x="209.2" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="209.2" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">e</text>
+<rect x="217.6" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="217.6" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">v</text>
+<rect x="226.0" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<rect x="234.4" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="234.4" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">+</text>
+<rect x="242.8" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="242.8" y="449.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">1</text>
+<rect x="251.2" y="436.0" width="8.9" height="18.5" fill="#a78bfa"/>
 <text x="1015.6" y="449.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="467.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<rect x="32.8" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<rect x="41.2" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<text x="41.2" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◉</text>
-<rect x="49.6" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<rect x="58.0" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<text x="58.0" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">m</text>
-<rect x="66.4" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<text x="66.4" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">a</text>
-<rect x="74.8" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<text x="74.8" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">i</text>
-<rect x="83.2" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
-<text x="83.2" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">n</text>
-<rect x="91.6" y="454.0" width="8.9" height="18.5" fill="#a78bfa"/>
+<text x="32.8" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">●</text>
+<text x="41.2" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="49.6" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="58.0" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="66.4" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="74.8" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="83.2" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="91.6" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="100.0" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="108.4" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="116.8" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="125.2" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="133.6" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◉</text>
+<text x="142.0" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="150.4" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="158.8" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="167.2" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="175.6" y="467.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
+<rect x="184.0" y="454.0" width="8.9" height="18.5" fill="#fbbf24"/>
+<text x="184.0" y="467.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◌</text>
 <text x="1015.6" y="467.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="485.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
-<text x="32.8" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◉</text>
-<text x="41.2" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="49.6" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="58.0" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="66.4" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
-<text x="74.8" y="485.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">─</text>
-<rect x="83.2" y="472.0" width="8.9" height="18.5" fill="#fbbf24"/>
-<text x="83.2" y="485.5" fill="#0d0e1a" textLength="8.4" lengthAdjust="spacing" font-weight="bold">◌</text>
+<text x="32.8" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">╰</text>
+<text x="41.2" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="49.6" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="58.0" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="66.4" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="74.8" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="83.2" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing" font-weight="bold">●</text>
+<text x="91.6" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="100.0" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="108.4" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="116.8" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="125.2" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="133.6" y="485.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">╯</text>
 <text x="1015.6" y="485.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="503.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="1015.6" y="503.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
@@ -589,7 +470,7 @@
 <text x="49.6" y="575.5" fill="#5d6093" textLength="8.4" lengthAdjust="spacing">o</text>
 <text x="58.0" y="575.5" fill="#5d6093" textLength="8.4" lengthAdjust="spacing">v</text>
 <text x="74.8" y="575.5" fill="#5d6093" textLength="8.4" lengthAdjust="spacing">7</text>
-<text x="83.2" y="575.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing" font-weight="bold">▲</text>
+<text x="184.0" y="575.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing" font-weight="bold">▲</text>
 <text x="1015.6" y="575.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
 <text x="16.0" y="593.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╰</text>
 <text x="24.4" y="593.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>

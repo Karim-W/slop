@@ -16,6 +16,7 @@ REPO="karim-w/slop"
 APPS="
 gitmon|A themeable git TUI with a horizontal commit graph
 slash|A two-pane SFTP client with parallel transfers
+kyro|A local music player with playlists, hooks and cover art
 "
 
 VERSION="latest"
@@ -190,6 +191,13 @@ for app in $SELECTED; do
 		fi
 	fi
 	ok "$app → $DIR/$app"
+	if [ "$app" = kyro ] && ! command -v mpv >/dev/null; then
+		say "${D}  kyro plays audio through mpv, which isn't installed yet:${N}"
+		case $OS in
+		darwin) say "    brew install mpv" ;;
+		*) say "    sudo apt install mpv   # or your distro's package manager" ;;
+		esac
+	fi
 done
 
 case ":$PATH:" in

@@ -31,6 +31,11 @@ Users already have data on disk, so these values stay fixed:
 - slash sites: `paths.NativeConfig("slash")/sites.json`
 - slash keychain service: `"slash-sftp"`
 - the release asset names `<app>_<os>_<arch>.tar.gz` and `checksums.txt`, which `install.sh` downloads
+- kyro: the `~/.kyro` layout (including `ratings.json`), the `config.json` keys (`dynamic_theme` included), the `.m3u8` playlist format, hook event names (`track`, `pause`, `resume`, `stop`) and `KYRO_*` variables, and the control-socket protocol. Hooks and scripts outside the repo depend on them.
+
+## Audio (kyro)
+
+Playback goes through mpv in shared mode, so the OS mixer protects the hardware. Exclusive mode, S/PDIF passthrough and channel policies stay opt-in config. Volume never exceeds 100. Every sound mode in `internal/sound` lowers the level before it boosts and ends in a limiter at -1 dBFS; `TestSoundModesStayUnderFullScale` checks this by rendering each mode to a file. Engine tests use `--ao=null` or `--ao=pcm`, so they never open a sound device. Apple Music sync only drives Music while it is already open, unless the user opts into `"always"`. Tests compile the AppleScript against Music's dictionary but never run it, and UI tests set `appleMusic` to `"off"`.
 
 ## Runtime conventions
 
