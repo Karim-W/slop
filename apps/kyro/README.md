@@ -114,6 +114,12 @@ kyro announces four events: `track` (a song started), `pause`, `resume` and `sto
 - **Hooks never hold up the music.** They run in the background with a 10-second limit. When you skip quickly, an older run of the same hook is cancelled, so hooks only ever see the latest track.
 - **`~/.kyro/now-playing.json`** is always current, for anything that polls a file.
 
+## Media keys and Now Playing
+
+Your keyboard's play/pause, next and previous keys drive kyro, and so do headphone buttons (AirPods included), the Touch Bar and the Now Playing panel in Control Center, which also shows the song and lets you scrub. They follow kyro's queue, shuffle and repeat, just like `space`, `]` and `[`.
+
+macOS sends media keys to whichever app last started playing. If Music or a browser grabs them, press play in kyro once to take them back. To leave the keys to other apps, set `"mediaKeys": "off"` under `audio` in `config.json`.
+
 ## Remote control
 
 A running kyro listens on `~/.kyro/kyro.sock`. Only your user can use it. This is how window-manager key bindings, media keys and status bars drive kyro:

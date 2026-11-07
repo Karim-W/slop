@@ -24,6 +24,22 @@ const (
 	Ended
 	// Exited: the backend went away (crashed or was closed).
 	Exited
+	// Remote: a media key or the system's Now Playing controls asked for
+	// Command. The engine doesn't act on it; the player decides.
+	Remote
+)
+
+// Remote commands, from media keys, headphones, Control Center or the
+// Touch Bar.
+const (
+	RemotePlay    = "play"
+	RemotePause   = "pause"
+	RemoteToggle  = "toggle"
+	RemoteStop    = "stop"
+	RemoteNext    = "next"
+	RemotePrev    = "prev"
+	RemoteForward = "forward"
+	RemoteRewind  = "rewind"
 )
 
 // EndReason says why a file stopped.
@@ -59,6 +75,7 @@ type Event struct {
 	// Started for it comes next.
 	Continues bool
 	Err       error
+	Command   string // for Remote: one of the Remote… commands
 }
 
 // Engine plays one file at a time with an optional gapless follow-up.

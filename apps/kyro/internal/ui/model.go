@@ -417,6 +417,9 @@ func (m *Model) fail(err error) tea.Cmd {
 // ─── Playback ───────────────────────────────────────────────────────────────
 
 func (m *Model) onEngine(e engine.Event) tea.Cmd {
+	if e.Kind == engine.Remote {
+		return m.fail(m.remote(e.Command))
+	}
 	change, err := m.pl.Handle(e)
 	var cmds []tea.Cmd
 	if err != nil {
