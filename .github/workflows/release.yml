@@ -1,0 +1,27 @@
+name: release
+
+# Push a tag like v0.2.0 to publish every app for macOS and Linux. The
+# install script downloads these archives.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.work
+          cache-dependency-path: "**/go.sum"
+      - run: make check
+      - run: make dist VERSION=${{ github.ref_name }}
+      - run: gh release create "${{ github.ref_name }}" dist/*.tar.gz dist/checksums.txt --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -1,0 +1,16 @@
+# build output
+/bin/
+/dist/
+
+# go
+*.test
+*.out
+
+# binaries from a plain `go build` inside an app folder
+/apps/*/gitmon
+/apps/*/slash
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/
