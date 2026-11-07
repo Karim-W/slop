@@ -1,0 +1,488 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="956" height="596" viewBox="0 0 956 596">
+<rect width="100%" height="100%" rx="10" fill="#0d0e1a"/>
+<circle cx="22" cy="20" r="6" fill="#ff5f57"/>
+<circle cx="42" cy="20" r="6" fill="#febc2e"/>
+<circle cx="62" cy="20" r="6" fill="#28c840"/>
+<text x="478" y="24" fill="#e6e6fa" fill-opacity="0.6" font-family='ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace' font-size="12" text-anchor="middle">slash</text>
+<g font-family='ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace' font-size="14" xml:space="preserve">
+<text x="24.4" y="53.5" fill="#bf85e9" textLength="8.4" lengthAdjust="spacing" font-weight="bold">⟋</text>
+<text x="41.2" y="53.5" fill="#e579c7" textLength="8.4" lengthAdjust="spacing" font-weight="bold">s</text>
+<text x="49.6" y="53.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing" font-weight="bold">l</text>
+<text x="58.0" y="53.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing" font-weight="bold">a</text>
+<text x="66.4" y="53.5" fill="#ce99c8" textLength="8.4" lengthAdjust="spacing" font-weight="bold">s</text>
+<text x="74.8" y="53.5" fill="#9ab9db" textLength="8.4" lengthAdjust="spacing" font-weight="bold">h</text>
+<text x="654.4" y="53.5" fill="#4ade80" textLength="8.4" lengthAdjust="spacing">●</text>
+<text x="662.8" y="53.5" fill="#e6e6fa" textLength="117.6" lengthAdjust="spacing"> dev@127.0.0.1</text>
+<text x="780.4" y="53.5" fill="#5d6093" textLength="151.2" lengthAdjust="spacing">  ·  2 connections</text>
+<text x="16.0" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╭</text>
+<text x="24.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="32.8" y="71.5" fill="#a9abd6" textLength="50.4" lengthAdjust="spacing" font-weight="bold"> Local</text>
+<text x="83.2" y="71.5" fill="#5d6093" textLength="268.8" lengthAdjust="spacing">  /var/fold…Dialogs269125116/001</text>
+<text x="360.4" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="368.8" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="377.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="394.0" y="71.5" fill="#5d6093" textLength="58.8" lengthAdjust="spacing">2 items</text>
+<text x="461.2" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="469.6" y="71.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╮</text>
+<text x="478.0" y="71.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">╭</text>
+<text x="486.4" y="71.5" fill="#ab8af8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="494.8" y="71.5" fill="#a78bfa" textLength="25.2" lengthAdjust="spacing" font-weight="bold"> ● </text>
+<text x="520.0" y="71.5" fill="#e6e6fa" textLength="109.2" lengthAdjust="spacing" font-weight="bold">dev@127.0.0.1</text>
+<text x="629.2" y="71.5" fill="#5d6093" textLength="176.4" lengthAdjust="spacing">  /Users…/internal/ui</text>
+<text x="814.0" y="71.5" fill="#bda6d0" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="822.4" y="71.5" fill="#b7aad2" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="830.8" y="71.5" fill="#b1add4" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="847.6" y="71.5" fill="#fbbf24" textLength="67.2" lengthAdjust="spacing">1 marked</text>
+<text x="923.2" y="71.5" fill="#40d0ec" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="931.6" y="71.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">╮</text>
+<text x="16.0" y="89.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<rect x="24.4" y="76.0" width="8.9" height="18.5" fill="#1b1c37"/>
+<rect x="32.8" y="76.0" width="17.3" height="18.5" fill="#1b1c37"/>
+<rect x="49.6" y="76.0" width="17.3" height="18.5" fill="#1b1c37"/>
+<text x="49.6" y="89.5" fill="#a78bfa" textLength="16.8" lengthAdjust="spacing" font-weight="bold">..</text>
+<rect x="66.4" y="76.0" width="286.1" height="18.5" fill="#1b1c37"/>
+<rect x="352.0" y="76.0" width="118.1" height="18.5" fill="#1b1c37"/>
+<text x="469.6" y="89.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="89.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="89.5" fill="#a78bfa" textLength="16.8" lengthAdjust="spacing" font-weight="bold">..</text>
+<text x="931.6" y="89.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="107.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="49.6" y="107.5" fill="#a78bfa" textLength="58.8" lengthAdjust="spacing" font-weight="bold">photos/</text>
+<text x="368.8" y="107.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:35</text>
+<text x="469.6" y="107.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="107.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="494.8" y="107.5" fill="#fbbf24" textLength="16.8" lengthAdjust="spacing">● </text>
+<text x="511.6" y="107.5" fill="#fbbf24" textLength="50.4" lengthAdjust="spacing">app.go</text>
+<text x="755.2" y="107.5" fill="#5d6093" textLength="58.8" lengthAdjust="spacing">11.4 KB</text>
+<text x="830.8" y="107.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="107.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="125.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="49.6" y="125.5" fill="#e6e6fa" textLength="75.6" lengthAdjust="spacing">notes.txt</text>
+<text x="326.8" y="125.5" fill="#5d6093" textLength="25.2" lengthAdjust="spacing">5 B</text>
+<text x="368.8" y="125.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:35</text>
+<text x="469.6" y="125.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="125.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<rect x="486.4" y="112.0" width="8.9" height="18.5" fill="#24264a"/>
+<rect x="494.8" y="112.0" width="17.3" height="18.5" fill="#24264a"/>
+<rect x="511.6" y="112.0" width="84.5" height="18.5" fill="#24264a"/>
+<text x="511.6" y="125.5" fill="#e6e6fa" textLength="84.0" lengthAdjust="spacing">browser.go</text>
+<rect x="595.6" y="112.0" width="168.5" height="18.5" fill="#24264a"/>
+<rect x="763.6" y="112.0" width="50.9" height="18.5" fill="#24264a"/>
+<text x="763.6" y="125.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">7.5 KB</text>
+<rect x="814.0" y="112.0" width="17.3" height="18.5" fill="#24264a"/>
+<rect x="830.8" y="112.0" width="101.3" height="18.5" fill="#24264a"/>
+<text x="830.8" y="125.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="125.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="143.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="143.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="143.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="143.5" fill="#e6e6fa" textLength="92.4" lengthAdjust="spacing">commands.go</text>
+<text x="763.6" y="143.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">2.5 KB</text>
+<text x="830.8" y="143.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="143.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="161.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="161.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="161.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="161.5" fill="#e6e6fa" textLength="84.0" lengthAdjust="spacing">dialogs.go</text>
+<text x="763.6" y="161.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">3.4 KB</text>
+<text x="830.8" y="161.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="161.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="179.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="179.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="179.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="179.5" fill="#e6e6fa" textLength="58.8" lengthAdjust="spacing">pane.go</text>
+<text x="763.6" y="179.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">5.6 KB</text>
+<text x="830.8" y="179.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="179.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="197.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="197.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="197.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="197.5" fill="#e6e6fa" textLength="67.2" lengthAdjust="spacing">sites.go</text>
+<text x="763.6" y="197.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">8.8 KB</text>
+<text x="830.8" y="197.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="197.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="215.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="215.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="215.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="215.5" fill="#e6e6fa" textLength="58.8" lengthAdjust="spacing">tray.go</text>
+<text x="763.6" y="215.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">5.9 KB</text>
+<text x="830.8" y="215.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="215.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="233.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="233.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="233.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="233.5" fill="#e6e6fa" textLength="84.0" lengthAdjust="spacing">ui_test.go</text>
+<text x="763.6" y="233.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">4.3 KB</text>
+<text x="830.8" y="233.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="233.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="251.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="251.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="251.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="511.6" y="251.5" fill="#e6e6fa" textLength="58.8" lengthAdjust="spacing">view.go</text>
+<text x="763.6" y="251.5" fill="#5d6093" textLength="50.4" lengthAdjust="spacing">2.8 KB</text>
+<text x="830.8" y="251.5" fill="#5d6093" textLength="100.8" lengthAdjust="spacing">Nov 07 11:32</text>
+<text x="931.6" y="251.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="269.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="269.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="269.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="269.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="287.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="287.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="287.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="287.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="305.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="305.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="305.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="305.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="323.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="323.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="323.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="323.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="341.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="341.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="341.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="341.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="359.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="359.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="359.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="359.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="469.6" y="377.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="478.0" y="377.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="377.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╰</text>
+<text x="24.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="32.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="41.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="49.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="58.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="66.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="74.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="83.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="91.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="100.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="108.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="116.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="125.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="133.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="142.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="150.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="158.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="167.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="175.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="184.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="192.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="200.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="209.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="217.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="226.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="234.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="242.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="251.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="259.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="268.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="276.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="284.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="293.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="301.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="310.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="318.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="326.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="335.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="343.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="352.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="360.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="368.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="377.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="385.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="394.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="402.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="410.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="419.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="427.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="436.0" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="444.4" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="452.8" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="461.2" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="469.6" y="395.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╯</text>
+<text x="478.0" y="395.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing">╰</text>
+<text x="486.4" y="395.5" fill="#ab8af8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="494.8" y="395.5" fill="#af89f5" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="503.2" y="395.5" fill="#b389f3" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="511.6" y="395.5" fill="#b688f0" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="520.0" y="395.5" fill="#ba87ee" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="528.4" y="395.5" fill="#bd86eb" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="536.8" y="395.5" fill="#c085e9" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="545.2" y="395.5" fill="#c384e6" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="553.6" y="395.5" fill="#c783e3" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="562.0" y="395.5" fill="#ca83e1" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="570.4" y="395.5" fill="#cd82de" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="578.8" y="395.5" fill="#cf81dc" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="587.2" y="395.5" fill="#d280d9" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="595.6" y="395.5" fill="#d57fd7" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="604.0" y="395.5" fill="#d87ed4" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="612.4" y="395.5" fill="#da7dd2" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="620.8" y="395.5" fill="#dd7ccf" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="629.2" y="395.5" fill="#df7bcd" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="637.6" y="395.5" fill="#e27aca" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="646.0" y="395.5" fill="#e479c8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="654.4" y="395.5" fill="#e778c5" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="662.8" y="395.5" fill="#e977c3" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="671.2" y="395.5" fill="#ec76c0" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="679.6" y="395.5" fill="#ee75be" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="688.0" y="395.5" fill="#f074bb" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="696.4" y="395.5" fill="#f273b9" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="704.8" y="395.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="713.2" y="395.5" fill="#f472b6" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="721.6" y="395.5" fill="#f177b8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="730.0" y="395.5" fill="#ec7cba" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="738.4" y="395.5" fill="#e881bc" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="746.8" y="395.5" fill="#e486bf" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="755.2" y="395.5" fill="#e08ac1" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="763.6" y="395.5" fill="#db8fc3" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="772.0" y="395.5" fill="#d793c5" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="780.4" y="395.5" fill="#d297c7" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="788.8" y="395.5" fill="#cd9bc9" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="797.2" y="395.5" fill="#c89fcb" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="805.6" y="395.5" fill="#c2a2cd" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="814.0" y="395.5" fill="#bda6d0" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="822.4" y="395.5" fill="#b7aad2" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="830.8" y="395.5" fill="#b1add4" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="839.2" y="395.5" fill="#aab1d6" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="847.6" y="395.5" fill="#a4b4d8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="856.0" y="395.5" fill="#9cb7da" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="864.4" y="395.5" fill="#95bbdd" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="872.8" y="395.5" fill="#8dbedf" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="881.2" y="395.5" fill="#84c1e1" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="889.6" y="395.5" fill="#7ac4e3" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="898.0" y="395.5" fill="#6fc7e6" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="906.4" y="395.5" fill="#62cae8" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="914.8" y="395.5" fill="#53cdea" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="923.2" y="395.5" fill="#40d0ec" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="931.6" y="395.5" fill="#22d3ee" textLength="8.4" lengthAdjust="spacing">╯</text>
+<text x="16.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╭</text>
+<text x="24.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="32.8" y="413.5" fill="#a9abd6" textLength="84.0" lengthAdjust="spacing" font-weight="bold"> Transfers</text>
+<text x="125.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="133.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="142.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="150.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="158.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="167.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="175.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="184.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="192.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="200.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="209.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="217.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="226.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="234.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="242.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="251.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="259.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="268.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="276.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="284.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="293.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="301.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="310.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="318.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="326.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="335.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="343.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="352.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="360.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="368.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="377.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="385.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="394.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="402.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="410.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="419.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="427.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="436.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="444.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="452.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="461.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="469.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="478.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="486.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="494.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="503.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="511.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="520.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="528.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="536.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="545.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="553.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="562.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="570.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="578.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="587.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="595.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="604.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="612.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="620.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="629.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="637.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="646.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="654.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="662.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="671.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="679.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="688.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="696.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="704.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="713.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="721.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="730.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="738.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="746.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="755.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="763.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="772.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="780.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="788.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="797.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="805.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="814.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="822.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="830.8" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="839.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="847.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="856.0" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="864.4" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="881.2" y="413.5" fill="#5d6093" textLength="33.6" lengthAdjust="spacing">idle</text>
+<text x="923.2" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="931.6" y="413.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╮</text>
+<text x="16.0" y="431.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="24.4" y="431.5" fill="#5d6093" textLength="176.4" lengthAdjust="spacing"> Nothing transferring</text>
+<text x="931.6" y="431.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="449.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="24.4" y="449.5" fill="#5d6093" textLength="336.0" lengthAdjust="spacing"> No transfers yet. Mark files and press </text>
+<text x="360.4" y="449.5" fill="#a78bfa" textLength="8.4" lengthAdjust="spacing" font-weight="bold">c</text>
+<text x="368.8" y="449.5" fill="#5d6093" textLength="176.4" lengthAdjust="spacing"> to copy them across.</text>
+<text x="931.6" y="449.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="467.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="467.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="485.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="485.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="503.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="503.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="521.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="521.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="539.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="931.6" y="539.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">│</text>
+<text x="16.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╰</text>
+<text x="24.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="32.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="41.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="49.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="58.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="66.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="74.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="83.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="91.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="100.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="108.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="116.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="125.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="133.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="142.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="150.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="158.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="167.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="175.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="184.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="192.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="200.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="209.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="217.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="226.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="234.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="242.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="251.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="259.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="268.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="276.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="284.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="293.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="301.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="310.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="318.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="326.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="335.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="343.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="352.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="360.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="368.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="377.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="385.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="394.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="402.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="410.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="419.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="427.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="436.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="444.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="452.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="461.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="469.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="478.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="486.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="494.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="503.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="511.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="520.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="528.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="536.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="545.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="553.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="562.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="570.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="578.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="587.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="595.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="604.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="612.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="620.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="629.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="637.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="646.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="654.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="662.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="671.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="679.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="688.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="696.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="704.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="713.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="721.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="730.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="738.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="746.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="755.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="763.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="772.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="780.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="788.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="797.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="805.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="814.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="822.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="830.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="839.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="847.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="856.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="864.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="872.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="881.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="889.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="898.0" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="906.4" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="914.8" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="923.2" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">─</text>
+<text x="931.6" y="557.5" fill="#2a2d52" textLength="8.4" lengthAdjust="spacing">╯</text>
+<text x="24.4" y="575.5" fill="#4ade80" textLength="470.4" lengthAdjust="spacing">✓ Connected to dev@127.0.0.1 with 2 transfer connections</text>
+</g>
+</svg>

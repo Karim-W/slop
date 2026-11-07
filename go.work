@@ -1,0 +1,11 @@
+go 1.26.0
+
+use (
+	./apps/gitmon
+	./apps/slash
+	./pkg/domain
+	./pkg/infra
+	./pkg/tui
+	./pkg/utils
+	./tools/ansisvg
+)
