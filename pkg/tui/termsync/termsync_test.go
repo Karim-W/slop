@@ -44,3 +44,20 @@ func TestGateHoldsQuitUntilReplies(t *testing.T) {
 		t.Fatal("expected immediate quit")
 	}
 }
+
+func TestGateExpectAddsReplies(t *testing.T) {
+	var g Gate
+	g.Query()
+	g.Expect(2)
+	if g.Pending() != Replies+2 {
+		t.Fatalf("pending %d", g.Pending())
+	}
+	g.WhenQuiet(tea.Quit)
+	var last tea.Cmd
+	for i := 0; i < Replies+2; i++ {
+		last = g.Reply()
+	}
+	if last == nil {
+		t.Fatal("quit should run after every reply, including the extra ones")
+	}
+}

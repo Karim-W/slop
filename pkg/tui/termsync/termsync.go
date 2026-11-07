@@ -102,6 +102,15 @@ func (g *Gate) Query() tea.Cmd {
 	return tea.Raw(Query())
 }
 
+// Expect counts n more replies the app asked for itself (other terminal
+// queries), so quitting also waits for them.
+func (g *Gate) Expect(n int) {
+	if g.pending == 0 {
+		g.sent = time.Now()
+	}
+	g.pending += n
+}
+
 // Pending is the number of replies still expected.
 func (g *Gate) Pending() int { return g.pending }
 
