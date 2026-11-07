@@ -111,6 +111,10 @@ type Audio struct {
 	// "wide" (for laptop speakers) or "deep" (headphones). Every mode keeps
 	// peaks under full scale. Choose with m in the player.
 	Sound string `json:"sound,omitempty"`
+	// MediaKeys lets the keyboard's media keys, headphone buttons and the
+	// system's Now Playing controls drive kyro. "" (default) is on, "off"
+	// leaves them to other apps.
+	MediaKeys string `json:"mediaKeys,omitempty"`
 	// ReplayGain is "no" (default), "track" or "album".
 	ReplayGain string `json:"replaygain"`
 	// Mpv is the path to mpv ("" = find it on $PATH).

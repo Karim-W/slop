@@ -47,7 +47,7 @@ func startTestMpv(t *testing.T) *Mpv {
 		t.Skip("mpv not installed")
 	}
 	// --ao=null decodes for real but never opens a sound device.
-	m, err := StartMpv(home.Audio{Channels: "auto", Extra: []string{"--ao=null"}}, 50)
+	m, err := StartMpv(home.Audio{Channels: "auto", Extra: []string{"--ao=null", "--media-controls=no"}}, 50)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -155,5 +155,29 @@ func TestArgsAreSafeByDefault(t *testing.T) {
 		if a == "--audio-exclusive=yes" || len(a) > 13 && a[:13] == "--audio-spdif" {
 			t.Errorf("unsafe default %s", a)
 		}
+	}
+}
+
+func TestMediaKeysReachKyro(t *testing.T) {
+	m := startTestMpv(t)
+	var seen []Event
+	for key, want := range map[string]string{"NEXT": RemoteNext, "PREV": RemotePrev, "PLAYPAUSE": RemoteToggle, "PAUSE": RemotePause, "STOP": RemoteStop} {
+		// keypress is what mpv does when the system sends it a media key.
+		if err := m.command("keypress", key); err != nil {
+			t.Fatal(err)
+		}
+		e := wait(t, m, &seen, func(e Event) bool { return e.Kind == Remote })
+		if e.Command != want {
+			t.Errorf("%s: got %q, want %q", key, e.Command, want)
+		}
+	}
+}
+
+func TestMediaControlsFollowConfig(t *testing.T) {
+	if !slices.Contains(Args(home.Audio{}, 50), "--media-controls=yes") {
+		t.Error("media keys are on by default")
+	}
+	if !slices.Contains(Args(home.Audio{MediaKeys: "off"}, 50), "--media-controls=no") {
+		t.Error(`"mediaKeys": "off" should turn them off`)
 	}
 }

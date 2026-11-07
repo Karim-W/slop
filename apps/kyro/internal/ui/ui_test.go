@@ -523,3 +523,28 @@ func TestSoundModesPreviewLiveAndSave(t *testing.T) {
 		t.Fatal("unknown modes should be refused")
 	}
 }
+
+func TestMediaKeysDriveTheQueue(t *testing.T) {
+	m, eng := newTestModel(t, 100, 30)
+	startPlaying(m, eng)
+	first := eng.playing
+	key := func(cmd string) { m.Update(engineMsg(engine.Event{Kind: engine.Remote, Command: cmd})) }
+
+	key(engine.RemoteNext)
+	if eng.playing == first {
+		t.Fatal("next key should move to the next track in kyro's queue")
+	}
+	m.Update(engineMsg(engine.Event{Kind: engine.Started, Path: eng.playing}))
+	key(engine.RemotePrev) // just started: back one
+	if eng.playing != first {
+		t.Fatalf("prev key should go back to %s, playing %s", first, eng.playing)
+	}
+	key(engine.RemoteStop)
+	if m.pl.State().Active {
+		t.Fatal("stop key should stop")
+	}
+	key(engine.RemotePlay)
+	if !m.pl.State().Active {
+		t.Fatal("play key should start the queue again")
+	}
+}

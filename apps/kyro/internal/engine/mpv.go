@@ -88,6 +88,10 @@ func Args(a home.Audio, volume int) []string {
 		// Downmixing surround to fewer speakers keeps the mix's balance
 		// without clipping.
 		"--audio-normalize-downmix=yes",
+		// Media keys and Now Playing: mpv registers with the system (macOS
+		// Control Center, keyboard media keys, headphone buttons) and kyro
+		// binds those keys to its own queue (see mediaKeys).
+		"--media-controls=" + map[bool]string{true: "yes", false: "no"}[a.MediaKeys != "off"],
 	}
 	if af := sound.Filter(a.Sound); af != "" {
 		args = append(args, "--af="+af)
@@ -155,7 +159,21 @@ func StartMpv(a home.Audio, volume int) (*Mpv, error) {
 			return nil, err
 		}
 	}
+	// Media keys arrive in mpv as these key names. Each one becomes a
+	// message to kyro instead of acting on mpv's own two-item playlist.
+	for key, cmd := range mediaKeys {
+		if err := m.command("keybind", key, "script-message kyro-remote "+cmd); err != nil {
+			m.Close()
+			return nil, err
+		}
+	}
 	return m, nil
+}
+
+// mediaKeys maps mpv's media key names to Remote commands.
+var mediaKeys = map[string]string{
+	"PLAY": RemotePlay, "PAUSE": RemotePause, "PLAYPAUSE": RemoteToggle, "STOP": RemoteStop,
+	"NEXT": RemoteNext, "PREV": RemotePrev, "FORWARD": RemoteForward, "REWIND": RemoteRewind,
 }
 
 func (m *Mpv) send(v map[string]any) error {
@@ -266,6 +284,7 @@ type mpvMsg struct {
 	Reason  string          `json:"reason"`
 	FileErr string          `json:"file_error"`
 	Error   string          `json:"error"`
+	Args    []string        `json:"args"`
 }
 
 func (m *Mpv) read() {
@@ -298,6 +317,10 @@ func (m *Mpv) handle(msg mpvMsg) {
 	switch msg.Event {
 	case "property-change":
 		m.property(msg.Name, msg.Data)
+	case "client-message":
+		if len(msg.Args) == 2 && msg.Args[0] == "kyro-remote" {
+			m.emit(Event{Kind: Remote, Command: msg.Args[1]})
+		}
 	case "end-file":
 		r := EndReason(msg.Reason)
 		var err error
