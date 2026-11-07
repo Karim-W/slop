@@ -14,6 +14,7 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
+	"strconv"
 	"strings"
 	"text/template"
 	"time"
@@ -28,9 +29,11 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/library"
 	"github.com/karim-w/slop/apps/kyro/internal/playlist"
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
+	"github.com/karim-w/slop/apps/kyro/internal/stats"
 	"github.com/karim-w/slop/apps/kyro/internal/ui"
 	"github.com/karim-w/slop/pkg/domain/buildinfo"
 	"github.com/karim-w/slop/pkg/domain/theme"
+	"github.com/karim-w/slop/pkg/infra/keychain"
 	"github.com/karim-w/slop/pkg/infra/paths"
 )
 
@@ -45,11 +48,12 @@ usage:
                                  what is playing, e.g. --format '{{.Artist}} - {{.Title}}'
   kyro ctl COMMAND [ARG]         toggle, play, pause, next, prev, stop,
                                  seek ±SECONDS, volume ±N, shuffle, repeat,
-                                 love, rate 0-5
+                                 love, rate 0-5, sound [MODE]
   kyro listen                    stream playback events as JSON lines
   kyro playlists                 list playlists
   kyro playlist export NAME DEST copy a playlist out (iTunes / Music can import it)
   kyro music pull | push         copy loves and stars from / to Apple Music
+  kyro stats [YEAR]              what your encrypted listening stats hold
   kyro devices                   list audio output devices
   kyro doctor                    check the setup
   kyro themes | version
@@ -101,6 +105,8 @@ func run(args []string) error {
 		return musicCmd(args)
 	case "doctor":
 		return doctorCmd()
+	case "stats":
+		return statsCmd(args)
 	case "themes":
 		fmt.Println("terminal")
 		for _, t := range theme.All(home.ThemesDir()) {
@@ -155,10 +161,21 @@ func tui(args []string) error {
 	if err != nil {
 		return fmt.Errorf("reading %s: %w", home.RatingsPath(), err)
 	}
+	var st *stats.Store
+	if cfg.Stats != "off" {
+		if st, err = openStats(); err != nil {
+			log.Warn("listening stats are off", "err", err)
+		}
+		defer func() {
+			if err := st.Close(); err != nil {
+				log.Warn("listening stats", "err", err)
+			}
+		}()
+	}
 	disp := &hooks.Dispatcher{Dir: home.HooksDir(), Commands: cfg.Hooks, StatePath: home.NowPlayingPath(), Log: log}
 	model := ui.New(ui.Deps{
 		Config: cfg, Library: lib, Playlists: playlist.Store{Dir: home.PlaylistsDir()},
-		Engine: eng, EngineErr: engErr, Hooks: disp, Ratings: rs, Log: log, ThemeName: *themeName,
+		Engine: eng, EngineErr: engErr, Hooks: disp, Ratings: rs, Stats: st, Log: log, ThemeName: *themeName,
 	})
 	prog := tea.NewProgram(model)
 
@@ -530,4 +547,54 @@ func musicCmd(args []string) error {
 	}
 	fmt.Printf("synced %d · %d aren't in your Music library\n", done, missing)
 	return rs.Save()
+}
+
+// ─── Listening stats ────────────────────────────────────────────────────────
+
+// openStats opens the encrypted stats database with its key from the
+// keychain (made the first time).
+func openStats() (*stats.Store, error) {
+	key, err := stats.LoadKey(keychain.New(stats.KeychainService), home.StatsPath())
+	if err != nil {
+		return nil, err
+	}
+	return stats.Open(home.StatsPath(), key)
+}
+
+func statsCmd(args []string) error {
+	year := time.Now().Year()
+	if len(args) > 0 {
+		y, err := strconv.Atoi(args[0])
+		if err != nil {
+			return errors.New("usage: kyro stats [YEAR]")
+		}
+		year = y
+	}
+	if cfg, _ := home.Load(); cfg.Stats == "off" {
+		fmt.Println(`listening stats are off ("stats": "off" in config.json)`)
+	}
+	st, err := openStats()
+	if err != nil {
+		return err
+	}
+	defer st.Close()
+	from := time.Date(year, 1, 1, 0, 0, 0, 0, time.Local)
+	sum, err := st.Summarize(from, from.AddDate(1, 0, 0))
+	if err != nil {
+		return err
+	}
+	fmt.Printf("%d so far\n", year)
+	fmt.Printf("  plays        %d (of %d recorded, skips included)\n", sum.Plays, sum.AllPlays)
+	fmt.Printf("  listened     %s\n", sum.Listened.Round(time.Minute))
+	fmt.Printf("  songs        %d different\n", sum.Songs)
+	if sum.TopArtist != "" {
+		fmt.Printf("  top artist   %s\n", sum.TopArtist)
+		fmt.Printf("  top song     %s (%d plays)\n", sum.TopSong, sum.TopSongN)
+	}
+	fmt.Printf("  events       %d loves, ratings and playlist adds\n", sum.EventCount)
+	if !sum.Since.IsZero() {
+		fmt.Printf("\nrecording since %s\n", sum.Since.Format("2 Jan 2006"))
+	}
+	fmt.Printf("stored encrypted in %s\nkey in the keychain: %s / %s\n", st.Path(), stats.KeychainService, stats.KeychainAccount)
+	return nil
 }

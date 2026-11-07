@@ -23,6 +23,7 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/playlist"
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
 	"github.com/karim-w/slop/apps/kyro/internal/sound"
+	"github.com/karim-w/slop/apps/kyro/internal/stats"
 )
 
 // fakeEngine plays instantly and reports what a real one would.
@@ -546,5 +547,60 @@ func TestMediaKeysDriveTheQueue(t *testing.T) {
 	key(engine.RemotePlay)
 	if !m.pl.State().Active {
 		t.Fatal("play key should start the queue again")
+	}
+}
+
+func TestPlaysAreRecordedForTheYearInReview(t *testing.T) {
+	m, eng := newTestModel(t, 120, 34)
+	key := make([]byte, 32) // tests never touch the real keychain
+	st, err := stats.Open(filepath.Join(t.TempDir(), "listening.db"), key)
+	if err != nil {
+		t.Fatal(err)
+	}
+	m.d.Stats = st
+	ev := func(e engine.Event) { m.Update(engineMsg(e)) }
+
+	startPlaying(m, eng) // Origami, from Songs; startPlaying sits at 1:23
+	first := eng.playing
+	for s := 84; s <= 100; s++ {
+		ev(engine.Event{Kind: engine.Position, Pos: time.Duration(s) * time.Second})
+	}
+	ev(engine.Event{Kind: engine.Paused, Paused: true})
+	press(m, "l") // love it: an event
+	ev(engine.Event{Kind: engine.Paused, Paused: false})
+
+	press(m, "]") // skip to the next song
+	ev(engine.Event{Kind: engine.Ended, Path: first, Reason: engine.Stopped})
+	ev(engine.Event{Kind: engine.Started, Path: eng.playing})
+	for s := 1; s <= 5; s++ {
+		ev(engine.Event{Kind: engine.Position, Pos: time.Duration(s) * time.Second})
+	}
+	m.quit() // closing kyro ends the play in progress
+	if err := st.Close(); err != nil {
+		t.Fatal(err)
+	}
+
+	st, _ = stats.Open(st.Path(), key)
+	defer st.Close()
+	plays, err := st.Plays(time.Now().Add(-time.Hour), time.Now().Add(time.Hour))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(plays) != 2 {
+		t.Fatalf("want 2 plays, got %+v", plays)
+	}
+	a, b := plays[0], plays[1]
+	if a.Title != "Origami" || a.EndReason != stats.Skipped || a.Context != "songs" || a.Pauses != 1 {
+		t.Errorf("first play: %+v", a)
+	}
+	if a.Listened < 16*time.Second || a.Listened > 18*time.Second || a.Codec == "" {
+		t.Errorf("first play listened %v (want about 17 s): %+v", a.Listened, a)
+	}
+	if b.EndReason != stats.Quit || b.Listened != 5*time.Second {
+		t.Errorf("second play: %+v", b)
+	}
+	sum, _ := st.Summarize(time.Now().Add(-time.Hour), time.Now().Add(time.Hour))
+	if sum.EventCount != 1 {
+		t.Errorf("the love should be logged, events %d", sum.EventCount)
 	}
 }

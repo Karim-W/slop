@@ -161,7 +161,12 @@ func TestArgsAreSafeByDefault(t *testing.T) {
 func TestMediaKeysReachKyro(t *testing.T) {
 	m := startTestMpv(t)
 	var seen []Event
-	for key, want := range map[string]string{"NEXT": RemoteNext, "PREV": RemotePrev, "PLAYPAUSE": RemoteToggle, "PAUSE": RemotePause, "STOP": RemoteStop} {
+	for key, want := range map[string]string{
+		"NEXT": RemoteNext, "PREV": RemotePrev, "STOP": RemoteStop,
+		// The keyboard's play/pause key arrives as PLAY and must toggle.
+		"PLAY": RemoteToggle, "PLAYPAUSE": RemoteToggle, "PAUSE": RemoteToggle,
+		"PLAYONLY": RemotePlay, "PAUSEONLY": RemotePause,
+	} {
 		// keypress is what mpv does when the system sends it a media key.
 		if err := m.command("keypress", key); err != nil {
 			t.Fatal(err)

@@ -364,6 +364,9 @@ func (m *Model) createPlaylist(name string, ts []library.Track) tea.Cmd {
 	}
 	if len(ts) > 0 {
 		m.d.Playlists.Add(name, entriesFor(ts)...)
+		for _, t := range ts {
+			m.event("playlist-add", name, t)
+		}
 	}
 	m.reloadPlaylists()
 	return m.showFlash(fmt.Sprintf("Created %s", name), true)
@@ -373,6 +376,11 @@ func (m *Model) addToPlaylist(name string, ts []library.Track) tea.Cmd {
 	n, err := m.d.Playlists.Add(name, entriesFor(ts)...)
 	if err != nil {
 		return m.fail(err)
+	}
+	if n > 0 {
+		for _, t := range ts {
+			m.event("playlist-add", name, t)
+		}
 	}
 	m.reloadPlaylists()
 	m.rebuildIf(secPlaylist)
