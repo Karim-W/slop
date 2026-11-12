@@ -32,7 +32,11 @@ func (m *Model) rate(t library.Track, fn func(*ratings.Rating)) (ratings.Rating,
 	if m.d.Ratings == nil {
 		return ratings.Rating{}, errors.New("ratings are unavailable")
 	}
+	before := m.d.Ratings.Get(t.Path)
 	r, err := m.d.Ratings.Update(t.Path, fn)
+	if err == nil {
+		m.rated(t, before, r)
+	}
 	if m.sec == secLoved {
 		m.rebuild()
 	}

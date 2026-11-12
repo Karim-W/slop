@@ -27,6 +27,7 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/playlist"
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
 	"github.com/karim-w/slop/apps/kyro/internal/sound"
+	"github.com/karim-w/slop/apps/kyro/internal/stats"
 	"github.com/karim-w/slop/pkg/domain/theme"
 	"github.com/karim-w/slop/pkg/tui"
 	"github.com/karim-w/slop/pkg/tui/termsync"
@@ -43,6 +44,7 @@ type Deps struct {
 	EngineErr error
 	Hooks     *hooks.Dispatcher
 	Ratings   *ratings.Store // loves and stars; nil disables them
+	Stats     *stats.Store   // listening stats; nil records nothing
 	Log       *slog.Logger
 	ThemeName string // --theme flag, overrides config
 }
@@ -116,6 +118,10 @@ type Model struct {
 	term     theme.TermColors
 	osc      termsync.Gate
 
+	// Listening stats: the play in progress, and where playback started.
+	tracker *stats.Tracker
+	playCtx [2]string // context and its name, see stats.Play
+
 	// Dynamic theme: palettes derived from covers, by art key (nil = the
 	// cover has no art), and the fade between one palette and the next.
 	covers      map[string]*theme.Theme
@@ -136,7 +142,7 @@ type Model struct {
 
 // New builds the model.
 func New(d Deps) *Model {
-	m := &Model{d: d, cfg: d.Config, lib: d.Library, art: art.NewCache(48), notify: make(chan func(), 64), covers: map[string]*theme.Theme{}}
+	m := &Model{d: d, cfg: d.Config, lib: d.Library, art: art.NewCache(48), notify: make(chan func(), 64), covers: map[string]*theme.Theme{}, tracker: stats.NewTracker(), playCtx: [2]string{"songs", ""}}
 	go func() {
 		for f := range m.notify {
 			f()
@@ -421,6 +427,7 @@ func (m *Model) onEngine(e engine.Event) tea.Cmd {
 		return m.fail(m.remote(e.Command))
 	}
 	change, err := m.pl.Handle(e)
+	m.trace(e, change)
 	var cmds []tea.Cmd
 	if err != nil {
 		cmds = append(cmds, m.fail(err))
@@ -492,6 +499,7 @@ func (m *Model) playRows(start int) tea.Cmd {
 	if len(ts) == 0 {
 		return nil
 	}
+	m.playCtx = m.context()
 	return m.fail(m.pl.PlayList(ts, idx))
 }
 
@@ -503,6 +511,7 @@ func (m *Model) quit() tea.Cmd {
 	if s.Active {
 		m.d.Hooks.Fire(hooks.Event{Event: "stop", Volume: s.Volume})
 	}
+	m.record(m.tracker.Finish(stats.Quit))
 	if m.d.Engine != nil {
 		m.d.Engine.Close()
 	}

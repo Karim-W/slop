@@ -61,6 +61,7 @@ config.json        settings, sources, hooks
 library.json       the index: paths and tags, never the audio itself
 playlists/*.m3u8   your playlists
 ratings.json       loves and stars, by file path (survives rescans)
+stats/listening.db your listening stats, encrypted (see below)
 hooks/             executables run on playback events
 themes/*.json      extra themes
 now-playing.json   the current track, rewritten on every change
@@ -82,6 +83,29 @@ The same works from outside: `kyro ctl love` toggles love on the playing song, a
 - **Other settings:** `"always"` opens Music when needed, and `"off"` turns syncing off.
 - **Commands:** `kyro music pull` copies your existing Music loves and stars into kyro (kyro changes not yet synced win). `kyro music push` sends kyro's waiting changes to Music. `kyro music status` shows what's waiting.
 - **Permission:** the first time, macOS asks whether your terminal may control Music.
+
+## Listening stats
+
+kyro keeps a diary of what you play, for a year in review that a later version will build from it. Each play records:
+
+- **The song:** title, artist, album, genre, year and file.
+- **When:** the start and end time, and your time zone, so time-of-day patterns work.
+- **How much you heard:** pauses and the parts you seek over don't count.
+- **How it ended:** finished, skipped, stopped, or kyro closed.
+- **Where you started it from:** songs, an album, an artist, a playlist or the queue.
+- **The settings at the time:** shuffle, repeat, sound mode, format, and its love and stars.
+
+Loves, star changes and playlist additions are logged as events. `kyro stats` (or `kyro stats 2025`) prints a short summary to show it's working.
+
+**Private by design:**
+
+- **Encrypted:** it's an SQLite database encrypted page by page (Adiantum), so the schema, every row and the journal are all ciphertext on disk.
+- **Key kept in the keychain:** the 256-bit key is random and lives in your keychain (`kyro-stats`), never next to the file. A copy of the database alone, in a backup or on another machine, can't be read.
+- **Only on this machine:** nothing is ever sent anywhere. The folder is readable by you alone (0700, the file 0600).
+- **Don't delete the keychain item:** if the key is lost, the stats can't be recovered, and kyro won't overwrite the database with a new one.
+- **What it doesn't protect against:** programs running as you can ask the keychain for the key. The encryption also hides your data but doesn't detect a file that was tampered with.
+
+To stop recording, set `"stats": "off"` in `config.json`.
 
 ## Playlists, iTunes and the iPod
 
@@ -230,6 +254,7 @@ internal/player    queue, shuffle, repeat and gapless hand-off
 internal/art       finding covers and drawing them in the terminal
 internal/dyntheme  a whole theme derived from a cover
 internal/sound     sound modes: the filter chains mpv runs
+internal/stats     the encrypted listening diary and its play tracker
 internal/hooks     hook executables, config hooks and now-playing.json
 internal/ipc       the control socket
 internal/ratings   loves and stars (ratings.json)

@@ -170,9 +170,13 @@ func StartMpv(a home.Audio, volume int) (*Mpv, error) {
 	return m, nil
 }
 
-// mediaKeys maps mpv's media key names to Remote commands.
+// mediaKeys maps mpv's media key names to Remote commands. As in mpv's
+// own input.conf, PLAY, PAUSE and PLAYPAUSE all toggle: the keyboard's
+// play/pause key and Control Center's toggle arrive as PLAY. Only
+// PLAYONLY and PAUSEONLY mean one thing.
 var mediaKeys = map[string]string{
-	"PLAY": RemotePlay, "PAUSE": RemotePause, "PLAYPAUSE": RemoteToggle, "STOP": RemoteStop,
+	"PLAY": RemoteToggle, "PAUSE": RemoteToggle, "PLAYPAUSE": RemoteToggle,
+	"PLAYONLY": RemotePlay, "PAUSEONLY": RemotePause, "STOP": RemoteStop,
 	"NEXT": RemoteNext, "PREV": RemotePrev, "FORWARD": RemoteForward, "REWIND": RemoteRewind,
 }
 

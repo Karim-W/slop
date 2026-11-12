@@ -38,7 +38,11 @@ func ThemesDir() string      { return filepath.Join(Dir(), "themes") }
 func NowPlayingPath() string { return filepath.Join(Dir(), "now-playing.json") }
 func ArtCacheDir() string    { return filepath.Join(Dir(), "cache", "art") }
 func RatingsPath() string    { return filepath.Join(Dir(), "ratings.json") }
-func LogPath() string        { return filepath.Join(Dir(), "kyro.log") }
+
+// StatsPath is the encrypted listening-stats database, in a folder only
+// you can open.
+func StatsPath() string { return filepath.Join(Dir(), "stats", "listening.db") }
+func LogPath() string   { return filepath.Join(Dir(), "kyro.log") }
 
 // SocketPath is the control socket other programs talk to. $KYRO_SOCKET
 // overrides it (Unix socket paths are limited to ~100 bytes).
@@ -85,6 +89,9 @@ type Config struct {
 	// DynamicTheme takes the whole theme (background, text, accents,
 	// gradients) from the cover of the playing song. Toggle it with c.
 	DynamicTheme bool `json:"dynamic_theme"`
+	// Stats records every play in an encrypted database on this machine,
+	// for the year in review. "" (default) records, "off" doesn't.
+	Stats string `json:"stats,omitempty"`
 	// Hooks run commands on playback events, in addition to executables in
 	// ~/.kyro/hooks.
 	Hooks []Hook `json:"hooks,omitempty"`
