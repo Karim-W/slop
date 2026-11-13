@@ -215,6 +215,15 @@ func (p *Player) Next() error {
 	return p.load()
 }
 
+// Jump plays the queue entry at i.
+func (p *Player) Jump(i int) error {
+	if i < 0 || i >= len(p.queue) {
+		return nil
+	}
+	p.idx = i
+	return p.load()
+}
+
 // Prev restarts the track, or goes back one if it just started.
 func (p *Player) Prev() error {
 	if !p.st.Active {

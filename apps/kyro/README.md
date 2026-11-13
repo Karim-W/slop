@@ -50,6 +50,7 @@ kyro picks a layout for the space it gets, so it can live in a corner of a tilin
 | `5` | your loved songs |
 | `c` | theme from the cover, on / off |
 | `m` | sound mode: pure, punch, wide, deep (plays live as you move) |
+| `w`, `o` | web player and pairing; play on this Mac, a TV or a phone |
 | `z`, `T`, `C`, `?`, `q` | zen, themes, cover art style, help, quit |
 
 ## Where things live
@@ -66,6 +67,8 @@ hooks/             executables run on playback events
 themes/*.json      extra themes
 now-playing.json   the current track, rewritten on every change
 cache/art/         covers exported for hooks
+cache/web/         songs converted for browsers that can't play the file
+web/devices.json   browsers paired with the web player (hashes, never the keys)
 ```
 
 Removing a source (`kyro sources rm PATH`) only forgets it; your files are untouched. Tracks whose file disappears are kept and marked missing, and a source on an unplugged drive is left alone.
@@ -144,6 +147,36 @@ Your keyboard's play/pause, next and previous keys drive kyro, and so do headpho
 
 macOS sends media keys to whichever app last started playing. If Music or a browser grabs them, press play in kyro once to take them back. To leave the keys to other apps, set `"mediaKeys": "off"` under `audio` in `config.json`.
 
+## Web player: your TV, your phone
+
+kyro can serve itself to browsers on your network. Press `w` to turn it on (the choice is saved). kyro shows its address, a QR code and a pairing code. It listens on port **5976**, which spells "kyro" on a phone keypad. The first address is your Mac's `.local` name, which stays the same when your router hands out a new IP.
+
+Pages open in zen mode. The background is built from the cover's own colours, each part of the screen taking the colour of the matching part of the art, so the cover blends into the page. Text colours are checked against every one of them. On a new song the art, background and every colour fade into the next. `c` on a page switches the cover colours off for that page.
+
+- **Your TV.** Open the address in the TV's browser and type the pairing code. Press **Play here** and the TV takes over the song at the same second, through its own speakers. On a TV the remote works in zen without pointing at anything: OK plays and pauses, ← → skip, ↑ ↓ change the volume.
+- **Your phone as a remote.** Scan the QR code with the camera. You get the library, the queue, zen mode and every control. Pick where the song plays with `⇢`: this Mac, the TV, or any other browser that said Play here.
+- **Your phone as the speaker.** Press Play here on the phone. The song moves to it, so a Bluetooth speaker paired with the phone plays it. The lock screen shows the song and its controls work.
+- **An app on the home screen.** In Safari, Share → Add to Home Screen. kyro then opens full screen with its own icon. The home-screen app keeps its own storage, so pair it once from inside the app.
+
+The queue, shuffle, repeat, loves, stars, hooks and listening stats work the same wherever the song plays. Your keyboard's media keys still drive it, even while the TV plays. In the terminal, `o` picks the output and the player shows `⇢ TV` while a browser plays. From a shell, `kyro ctl output TV` moves the song, and `kyro ctl output local` brings it back.
+
+How it behaves:
+
+- **Formats.** Browsers play MP3, AAC, FLAC and WAV themselves, and Safari plays ALAC too. kyro sends those files untouched. Anything a browser can't play (DSD, WavPack, APE, AIFF in Chrome…) kyro converts with mpv into a lossless FLAC or WAV, once, and caches it in `cache/web/`. While a page plays, its quality line says what it gets: `original ALAC`, `converted to lossless FLAC`, or `sound mode · lossless FLAC`.
+- **Sound modes** reach browser speakers too. kyro renders the mode (punch, wide, deep) into a lossless copy with the same filters and the same −1 dBFS limiter, from the next song on. `pure` sends the file untouched.
+- **A page that goes away.** If a browser that is playing closes or loses the network for a few minutes, the song moves back to the Mac, *paused*. Nothing starts playing out loud by surprise.
+- **Sound needs a tap.** Browsers only make sound after a tap on the page. Play here is that tap. If kyro sends a song to a page nobody has tapped yet, the page shows a "tap to play here" button.
+
+Privacy and safety:
+
+- **Pair once.** A browser can pair only while kyro's `w` screen is open. It needs the six-digit code, and five wrong codes close pairing until you open the screen again. After that it stays paired. It keeps a random key in a cookie, and in the page's own storage in case the cookie is cleared. kyro stores only that key's SHA-256 hash, in `web/devices.json`.
+- **Unpair from the Mac.** The `w` screen lists every paired browser, with ● on the ones open right now and when each was last seen. Pick one and press `x` to unpair it: its pages close on the spot, it stops being a speaker, and it needs a new code to come back. `X` unpairs them all.
+- **Your files stay private.** Pages name songs by ID, never by path. kyro serves only songs in your library or queue, and never sends file paths to the page.
+- **The page loads nothing from the internet**: no fonts, no scripts, no analytics. Every page sets strict security headers, and changes need a header that other websites can't send.
+- **It is plain HTTP on your own network.** Anyone who can watch your Wi-Fi traffic could see what you play, and could copy a paired browser's cookie. Only turn the web player on for networks you trust, and turn it off with `w` when you don't need it. On the first start, macOS may ask whether kyro may accept incoming connections. Allow it, or other devices can't reach kyro.
+
+In `config.json`: `"web": {"enabled": true, "port": 5976, "name": "Living room Mac"}`. The name defaults to your Mac's name in System Settings.
+
 ## Remote control
 
 A running kyro listens on `~/.kyro/kyro.sock`. Only your user can use it. This is how window-manager key bindings, media keys and status bars drive kyro:
@@ -153,6 +186,7 @@ kyro ctl toggle | play | pause | next | prev | stop | shuffle | repeat
 kyro ctl seek +10        # or -10, or an absolute 90
 kyro ctl volume -5       # or +5, or 40
 kyro ctl sound wide      # or pure, punch, deep; no name moves to the next
+kyro ctl output TV       # play on a browser speaker by name; local brings it back
 kyro status              # ▶ Solar Wind — Nebula Drift  (1:23 / 4:56)
 kyro status --format '{{.Artist}} – {{.Title}}'
 kyro status --json
@@ -249,7 +283,7 @@ main.go            CLI: the player, import, scan, ctl, status, listen, playlists
 internal/home      ~/.kyro layout and config.json
 internal/library   the index: scanning, tags, header probes (rate, depth, channels, duration)
 internal/playlist  .m3u8 files
-internal/engine    the playback engine interface and the mpv backend
+internal/engine    the playback engine interface, the mpv backend and the output router
 internal/player    queue, shuffle, repeat and gapless hand-off
 internal/art       finding covers and drawing them in the terminal
 internal/dyntheme  a whole theme derived from a cover
@@ -257,6 +291,7 @@ internal/sound     sound modes: the filter chains mpv runs
 internal/stats     the encrypted listening diary and its play tracker
 internal/hooks     hook executables, config hooks and now-playing.json
 internal/ipc       the control socket
+internal/web       the web player: pairing, the browser speaker engine, the page itself
 internal/ratings   loves and stars (ratings.json)
 internal/applemusic syncing them with the macOS Music app
 internal/ui        the Bubble Tea model and views on pkg/tui

@@ -371,3 +371,55 @@ func fromLinear(v float64) float64 {
 }
 
 func clamp(v, lo, hi float64) float64 { return math.Max(lo, math.Min(hi, v)) }
+
+// ─── Field ──────────────────────────────────────────────────────────────────
+
+// Field returns a 3×3 grid of colours, row by row, for painting a
+// background around the cover: each is the cover's colour in that part of
+// the image, toned to sit at t's background lightness. A page that spreads
+// them across the screen continues the cover's colours outwards, so the art
+// blends in, and t's text stays readable on every one of them.
+func Field(img image.Image, t theme.Theme) []string {
+	const n = 24
+	small := image.NewRGBA(image.Rect(0, 0, n, n))
+	draw.ApproxBiLinear.Scale(small, small.Bounds(), img, img.Bounds(), draw.Src, nil)
+	text, muted := theme.Hex(t.Text), theme.Hex(t.Muted)
+	out := make([]string, 0, 9)
+	for gy := 0; gy < 3; gy++ {
+		for gx := 0; gx < 3; gx++ {
+			var sum lab
+			var k float64
+			for y := gy * n / 3; y < (gy+1)*n/3; y++ {
+				for x := gx * n / 3; x < (gx+1)*n/3; x++ {
+					c := small.RGBAAt(x, y)
+					if c.A < 128 {
+						continue
+					}
+					p := fromColor(c)
+					sum.L, sum.A, sum.B, k = sum.L+p.L, sum.A+p.A, sum.B+p.B, k+1
+				}
+			}
+			if k == 0 {
+				out = append(out, t.Bg)
+				continue
+			}
+			p := lab{sum.L / k, sum.A / k, sum.B / k}
+			var c lab
+			if t.Dark {
+				c = lch(clamp(p.L*0.5, 0.16, 0.32), math.Min(p.c()*0.9, 0.12), p.h())
+			} else {
+				c = lch(clamp(0.8+p.L*0.15, 0.86, 0.95), math.Min(p.c()*0.6, 0.06), p.h())
+			}
+			// Keep the text readable: push the colour away from it.
+			step := -0.01
+			if !t.Dark {
+				step = 0.01
+			}
+			for i := 0; i < 30 && (theme.Contrast(text, c.color()) < 7 || theme.Contrast(muted, c.color()) < 3); i++ {
+				c = lch(clamp(c.L+step, 0, 1), c.c(), c.h())
+			}
+			out = append(out, theme.ToHex(c.color()))
+		}
+	}
+	return out
+}

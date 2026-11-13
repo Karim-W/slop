@@ -7,7 +7,10 @@
 //	← one state line now, then one per playback event, until disconnect
 //
 // Commands: status, subscribe, toggle, play, pause, next, prev, stop,
-// seek <seconds | +N | -N>, volume <0-100 | +N | -N>, shuffle, repeat.
+// seek <seconds | +N | -N>, volume <0-100 | +N | -N>, shuffle, repeat,
+// love, rate <0-5>, sound [MODE], dynamic, output <ID>, jump (index),
+// play-tracks (ids, index, arg "album:NAME"…), play-playlist <NAME>
+// (index), enqueue (ids) and play-next (ids).
 // `kyro ctl …` and `kyro status` are thin clients of this socket, so window
 // manager key bindings and status bars can drive and show kyro.
 package ipc
@@ -28,6 +31,10 @@ import (
 type Request struct {
 	Cmd string `json:"cmd"`
 	Arg string `json:"arg,omitempty"`
+	// IDs and Index pick tracks for play-tracks, enqueue, play-next and
+	// jump (see the package doc).
+	IDs   []string `json:"ids,omitempty"`
+	Index int      `json:"index,omitempty"`
 }
 
 // Response answers a request.

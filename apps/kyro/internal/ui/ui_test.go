@@ -5,6 +5,7 @@ import (
 	"image"
 	"image/color"
 	"image/png"
+	"net"
 	"os"
 	"path/filepath"
 	"strings"
@@ -20,10 +21,12 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/hooks"
 	"github.com/karim-w/slop/apps/kyro/internal/ipc"
 	"github.com/karim-w/slop/apps/kyro/internal/library"
+	"github.com/karim-w/slop/apps/kyro/internal/player"
 	"github.com/karim-w/slop/apps/kyro/internal/playlist"
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
 	"github.com/karim-w/slop/apps/kyro/internal/sound"
 	"github.com/karim-w/slop/apps/kyro/internal/stats"
+	"github.com/karim-w/slop/apps/kyro/internal/web"
 )
 
 // fakeEngine plays instantly and reports what a real one would.
@@ -228,7 +231,7 @@ func TestAlbumsDrillDownAndFilter(t *testing.T) {
 }
 
 func TestDialogsRender(t *testing.T) {
-	for _, k := range []string{"?", "T", "N", "i"} {
+	for _, k := range []string{"?", "T", "N", "i", "o", "w"} {
 		m, _ := newTestModel(t, 100, 30)
 		press(m, k)
 		if m.modal == nil {
@@ -602,5 +605,66 @@ func TestPlaysAreRecordedForTheYearInReview(t *testing.T) {
 	sum, _ := st.Summarize(time.Now().Add(-time.Hour), time.Now().Add(time.Hour))
 	if sum.EventCount != 1 {
 		t.Errorf("the love should be logged, events %d", sum.EventCount)
+	}
+}
+
+func TestWebPlayerAndOutputs(t *testing.T) {
+	m, eng := newTestModel(t, 110, 34)
+	router := engine.NewRouter("local", "Mac", eng, 70, nil)
+	tv := &fakeEngine{}
+	router.Add("tv-12345678", "TV", tv)
+	ln, err := net.Listen("tcp", "127.0.0.1:0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	port := ln.Addr().(*net.TCPAddr).Port
+	ln.Close()
+	srv := web.New(web.Deps{Library: m.lib, Router: router, Dir: home.WebDir(), Do: m.onIPC, Host: "127.0.0.1"})
+	t.Cleanup(func() { srv.Stop() })
+	m.d.Engine, m.d.Router, m.d.Web = router, router, srv
+	m.pl = player.New(router, 70, false, player.RepeatOff)
+	m.cfg.Web.Port = port
+
+	// w turns the web player on, saves it, and opens pairing while shown.
+	press(m, "w")
+	press(m, "enter")
+	if !srv.Running() || srv.PairingCode() == "" {
+		t.Fatal("web player should run and offer a pairing code")
+	}
+	if cfg, _ := home.Load(); !cfg.Web.Enabled {
+		t.Fatal("web player setting not saved")
+	}
+	screen(t, m)
+	press(m, "esc")
+	if srv.PairingCode() != "" {
+		t.Fatal("pairing must close with the dialog")
+	}
+
+	// Pages play by track ID.
+	ids := []string{m.tracks[3].ID, m.tracks[4].ID}
+	if r := m.onIPC(ipc.Request{Cmd: "play-tracks", IDs: ids, Index: 1, Arg: "album:Paper Skies"}); !r.OK {
+		t.Fatalf("play-tracks: %+v", r)
+	}
+	if s := m.pl.State(); s.Track.ID != ids[1] || m.playCtx != [2]string{"album", "Paper Skies"} {
+		t.Fatalf("playing %q from %v", s.Track.Title, m.playCtx)
+	}
+	if r := m.onIPC(ipc.Request{Cmd: "jump", Index: 0}); !r.OK || m.pl.State().Track.ID != ids[0] {
+		t.Fatalf("jump: %+v", r)
+	}
+	if r := m.onIPC(ipc.Request{Cmd: "output", Arg: "gone"}); r.OK {
+		t.Fatal("switching to a missing output should fail")
+	}
+
+	// o moves the song to the TV; the player shows where it plays.
+	press(m, "o", "down", "enter")
+	if router.Active() != "tv-12345678" || tv.playing != eng.playing {
+		t.Fatalf("active %q, tv playing %q", router.Active(), tv.playing)
+	}
+	if !strings.Contains(screen(t, m), "⇢ TV") {
+		t.Fatal("the player should say it plays on the TV")
+	}
+	st := m.webState()
+	if st.Output != "tv-12345678" || len(st.Outputs) != 2 || st.Track == nil || st.Track.ID != ids[0] || st.Theme.Bg == "" || st.QueueLen != 2 {
+		t.Fatalf("web state %+v", st)
 	}
 }

@@ -28,6 +28,7 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
 	"github.com/karim-w/slop/apps/kyro/internal/sound"
 	"github.com/karim-w/slop/apps/kyro/internal/stats"
+	"github.com/karim-w/slop/apps/kyro/internal/web"
 	"github.com/karim-w/slop/pkg/domain/theme"
 	"github.com/karim-w/slop/pkg/tui"
 	"github.com/karim-w/slop/pkg/tui/termsync"
@@ -45,6 +46,10 @@ type Deps struct {
 	Hooks     *hooks.Dispatcher
 	Ratings   *ratings.Store // loves and stars; nil disables them
 	Stats     *stats.Store   // listening stats; nil records nothing
+	// Router picks the output (this Mac or a browser speaker) when Engine
+	// is one; Web is the web player. Both may be nil.
+	Router    *engine.Router
+	Web       *web.Server
 	Log       *slog.Logger
 	ThemeName string // --theme flag, overrides config
 }
@@ -120,7 +125,9 @@ type Model struct {
 
 	// Listening stats: the play in progress, and where playback started.
 	tracker *stats.Tracker
-	playCtx [2]string // context and its name, see stats.Play
+	// Revisions the web player watches to refetch lists.
+	libRev, plRev int
+	playCtx       [2]string // context and its name, see stats.Play
 
 	// Dynamic theme: palettes derived from covers, by art key (nil = the
 	// cover has no art), and the fade between one palette and the next.
@@ -239,6 +246,11 @@ func (m *Model) Init() tea.Cmd {
 	if len(m.cfg.Sources) > 0 {
 		cmds = append(cmds, m.rescan())
 	}
+	if m.cfg.Web.Enabled && m.d.Web != nil {
+		if err := m.d.Web.Start(m.cfg.Web.Port); err != nil {
+			cmds = append(cmds, m.fail(err))
+		}
+	}
 	if m.d.Ratings != nil && m.cfg.AppleMusic != "off" && applemusic.Available() {
 		cmds = append(cmds, m.syncPending(false))
 	}
@@ -266,6 +278,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	if m.px != nil && m.px.Pending() {
 		cmd = tea.Batch(cmd, tea.Raw(m.px.Flush()))
 	}
+	m.publish()
 	return model, cmd
 }
 
@@ -442,8 +455,8 @@ func (m *Model) onEngine(e engine.Event) tea.Cmd {
 	if change != "" {
 		m.announce(change)
 	}
-	if e.Kind == engine.Exited && e.Err != nil {
-		m.d.Engine = nil
+	if e.Kind == engine.Exited && e.Err != nil && m.d.Router == nil {
+		m.d.Engine = nil // nothing more will come; the router lives on
 	}
 	return tea.Batch(cmds...)
 }
@@ -512,6 +525,9 @@ func (m *Model) quit() tea.Cmd {
 		m.d.Hooks.Fire(hooks.Event{Event: "stop", Volume: s.Volume})
 	}
 	m.record(m.tracker.Finish(stats.Quit))
+	if m.d.Web != nil {
+		m.d.Web.Stop()
+	}
 	if m.d.Engine != nil {
 		m.d.Engine.Close()
 	}
@@ -524,13 +540,17 @@ func (m *Model) quit() tea.Cmd {
 
 // ─── Library & sections ─────────────────────────────────────────────────────
 
-func (m *Model) reloadLibrary() { m.tracks = m.lib.All() }
+func (m *Model) reloadLibrary() {
+	m.tracks = m.lib.All()
+	m.libRev++
+}
 
 func (m *Model) reloadPlaylists() {
 	ps, err := m.d.Playlists.List()
 	if err == nil {
 		m.playlists = ps
 	}
+	m.plRev++
 }
 
 // rescan indexes the sources in the background.
@@ -710,8 +730,49 @@ func (m *Model) onIPC(r ipc.Request) ipc.Response {
 		}
 		m.pending = append(m.pending, m.setSound(name))
 		err = home.Save(m.cfg)
+	case "play-tracks", "enqueue", "play-next":
+		ts := m.tracksByID(r.IDs)
+		if len(ts) == 0 {
+			return ipc.Response{Error: "no such tracks"}
+		}
+		switch r.Cmd {
+		case "play-tracks":
+			kind, name, _ := strings.Cut(r.Arg, ":")
+			m.playCtx = [2]string{orUnknown(kind, "songs"), name}
+			err = m.pl.PlayList(ts, min(max(r.Index, 0), len(ts)-1))
+		case "enqueue":
+			m.pl.Enqueue(ts...)
+		default:
+			for i := len(ts) - 1; i >= 0; i-- {
+				m.pl.PlayNext(ts[i])
+			}
+		}
+		m.rebuildIf(secQueue)
+	case "play-playlist":
+		ts := m.playlistTracks(r.Arg)
+		if len(ts) == 0 {
+			return ipc.Response{Error: "no such playlist"}
+		}
+		m.playCtx = [2]string{"playlist", r.Arg}
+		err = m.pl.PlayList(ts, min(max(r.Index, 0), len(ts)-1))
+	case "jump":
+		err = m.pl.Jump(r.Index)
+	case "output":
+		if m.d.Router == nil {
+			return ipc.Response{Error: "only this computer can play"}
+		}
+		id := r.Arg
+		for _, o := range m.d.Router.Outputs() { // a name works too: kyro ctl output TV
+			if strings.EqualFold(o.Name, r.Arg) {
+				id = o.ID
+			}
+		}
+		err = m.d.Router.Switch(id)
+	case "dynamic":
+		m.pending = append(m.pending, m.toggleDynamic())
 	case "shuffle":
 		m.pl.ToggleShuffle()
+		m.rebuildIf(secQueue)
 	case "repeat":
 		m.pl.CycleRepeat()
 	case "seek":

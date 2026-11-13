@@ -36,6 +36,7 @@ func (m *Model) rate(t library.Track, fn func(*ratings.Rating)) (ratings.Rating,
 	r, err := m.d.Ratings.Update(t.Path, fn)
 	if err == nil {
 		m.rated(t, before, r)
+		m.libRev++ // pages show loves and stars in their lists
 	}
 	if m.sec == secLoved {
 		m.rebuild()

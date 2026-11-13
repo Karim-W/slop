@@ -31,13 +31,15 @@ Users already have data on disk, so these values stay fixed:
 - slash sites: `paths.NativeConfig("slash")/sites.json`
 - slash keychain service: `"slash-sftp"`
 - the release asset names `<app>_<os>_<arch>.tar.gz` and `checksums.txt`, which `install.sh` downloads
-- kyro: the `~/.kyro` layout (including `ratings.json` and `stats/listening.db`), the stats schema (`plays`, `events`, `meta`; change it only with a migration that bumps `stats.SchemaVersion`) and its keychain item (`kyro-stats` / `database-key`), the `config.json` keys (`dynamic_theme` included), the `.m3u8` playlist format, hook event names (`track`, `pause`, `resume`, `stop`) and `KYRO_*` variables, and the control-socket protocol. Hooks and scripts outside the repo depend on them.
+- kyro: the `~/.kyro` layout (including `ratings.json`, `stats/listening.db` and `web/devices.json`), the stats schema (`plays`, `events`, `meta`; change it only with a migration that bumps `stats.SchemaVersion`) and its keychain item (`kyro-stats` / `database-key`), the `config.json` keys (`dynamic_theme` and `web` included), the web player's default port 5976 (paired browsers' cookies belong to that address), the `.m3u8` playlist format, hook event names (`track`, `pause`, `resume`, `stop`) and `KYRO_*` variables, and the control-socket protocol. Hooks and scripts outside the repo depend on them.
 
 ## Audio (kyro)
 
 Playback goes through mpv in shared mode, so the OS mixer protects the hardware. Exclusive mode, S/PDIF passthrough and channel policies stay opt-in config. Volume never exceeds 100. Every sound mode in `internal/sound` lowers the level before it boosts and ends in a limiter at -1 dBFS; `TestSoundModesStayUnderFullScale` checks this by rendering each mode to a file. Engine tests use `--ao=null` or `--ao=pcm`, so they never open a sound device. Apple Music sync only drives Music while it is already open, unless the user opts into `"always"`. Tests compile the AppleScript against Music's dictionary but never run it, and UI tests set `appleMusic` to `"off"`.
 
 Listening stats stay on the machine and encrypted. `internal/stats` has no network code, and only kyro reads the database. Tests open it with a key they make themselves and never touch the real keychain.
+
+The web player (`internal/web`) answers only browsers paired while the `w` screen is open, and stores only hashes of their keys; revoking one cuts its open pages and speakers at once. The page stays light enough for a phone: it moves only with transforms, updates the clock four times a second, and runs no endless animation. Pages name songs by track ID; the server maps IDs to files kyro already knows and never sends a path. The page loads nothing from outside kyro: its files are embedded in `internal/web/static`. Browser speakers are `engine.Engine`s behind `engine.Router`, so the player, hooks and stats need no changes for them. Tests listen on `127.0.0.1` (`web.Deps.Host`).
 
 ## Runtime conventions
 
