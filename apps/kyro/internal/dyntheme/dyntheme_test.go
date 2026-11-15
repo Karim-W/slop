@@ -122,3 +122,40 @@ func TestEmptyImageFallsBack(t *testing.T) {
 		t.Errorf("transparent image should keep the base theme, got %q", got.Name)
 	}
 }
+
+func TestFieldFollowsTheCoverAndStaysReadable(t *testing.T) {
+	// Left half red, right half blue.
+	img := image.NewRGBA(image.Rect(0, 0, 300, 300))
+	for y := 0; y < 300; y++ {
+		for x := 0; x < 300; x++ {
+			c := color.RGBA{200, 40, 50, 255}
+			if x >= 150 {
+				c = color.RGBA{40, 70, 210, 255}
+			}
+			img.SetRGBA(x, y, c)
+		}
+	}
+	for _, light := range []bool{false, true} {
+		src := image.Image(img)
+		if light {
+			src = cover(color.RGBA{245, 235, 225, 255}, color.RGBA{230, 120, 60, 255}, 60)
+		}
+		th := From(src, theme.Default())
+		f := Field(src, th)
+		if len(f) != 9 {
+			t.Fatalf("field has %d colours, want 9", len(f))
+		}
+		for i, hex := range f {
+			if c := theme.Contrast(theme.Hex(th.Text), theme.Hex(hex)); c < 7 {
+				t.Errorf("light=%v cell %d %s: text contrast %.1f, want ≥ 7", light, i, hex, c)
+			}
+			if c := theme.Contrast(theme.Hex(th.Muted), theme.Hex(hex)); c < 3 {
+				t.Errorf("light=%v cell %d %s: muted contrast %.1f, want ≥ 3", light, i, hex, c)
+			}
+		}
+		if !light {
+			hueNear(t, "left cell", f[3], hue("#c82832"))
+			hueNear(t, "right cell", f[5], hue("#2846d2"))
+		}
+	}
+}

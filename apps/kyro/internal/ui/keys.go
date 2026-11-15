@@ -102,6 +102,12 @@ func (m *Model) key(k tea.KeyPressMsg) tea.Cmd {
 	case "m":
 		m.modal = newSoundPicker(m)
 		return nil
+	case "o":
+		m.modal = newOutputPicker(m)
+		return nil
+	case "w":
+		m.modal = newWebDialog(m)
+		return nil
 	case "C":
 		m.modal = newArtPicker(m)
 		return m.artProbe()

@@ -341,7 +341,10 @@ func (m *Model) qualityLine(s player.State) tui.View {
 		}
 		spans = append(spans, tui.S(out, tui.Fg(tui.Muted)))
 	}
-	if md := sound.Find(m.cfg.Audio.Sound); md.Chain != "" {
+	if name := m.outputName(); name != "" {
+		spans = []tui.Span{tui.S(library.Quality(t.Codec, t.SampleRate, t.BitDepth, t.Channels), tui.Fg(qualityColor(t))),
+			tui.S(" · ", tui.Fg(tui.Muted)), tui.S("⇢ "+name, tui.Fg(tui.Accent).Bold())}
+	} else if md := sound.Find(m.cfg.Audio.Sound); md.Chain != "" {
 		spans = append(spans, tui.S(" · ", tui.Fg(tui.Muted)), tui.S("◆ "+md.Name, tui.Fg(tui.Accent2)))
 	}
 	if t.Year > 0 {

@@ -205,6 +205,18 @@ func (m *Mpv) Play(path string) error {
 	return m.command("set_property", "pause", false)
 }
 
+// PlayFrom starts path at a position, paused or playing, for a hand-over
+// from another output.
+func (m *Mpv) PlayFrom(path string, at time.Duration, paused bool) error {
+	m.mu.Lock()
+	m.next = ""
+	m.mu.Unlock()
+	if err := m.command("set_property", "pause", paused); err != nil {
+		return err
+	}
+	return m.command("loadfile", path, "replace", -1, fmt.Sprintf("start=%.3f", max(at.Seconds(), 0)))
+}
+
 func (m *Mpv) Next(path string) error {
 	m.mu.Lock()
 	m.next = path

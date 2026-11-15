@@ -279,7 +279,7 @@ var helpSections = []struct {
 		{"l", "love / unlove"}, {". ,", "more / fewer stars"}, {"0-5", "stars (zen mode)"},
 		{"a", "add to playlist (zen too)"},
 	}},
-	{"Other", [][2]string{{"5", "loved songs"}, {"T", "themes"}, {"c", "theme from the cover on/off"}, {"m", "sound: pure, punch, wide, deep"}, {"C", "cover art style"}, {"?", "this help"}, {"q", "quit"}}},
+	{"Other", [][2]string{{"5", "loved songs"}, {"T", "themes"}, {"c", "theme from the cover on/off"}, {"m", "sound: pure, punch, wide, deep"}, {"o", "play on: this Mac, a TV, a phone"}, {"w", "web player and pairing"}, {"C", "cover art style"}, {"?", "this help"}, {"q", "quit"}}},
 }
 
 func (helpDialog) Update(m *Model, msg tea.Msg) (modal, tea.Cmd) {

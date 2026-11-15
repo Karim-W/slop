@@ -38,6 +38,8 @@ func ThemesDir() string      { return filepath.Join(Dir(), "themes") }
 func NowPlayingPath() string { return filepath.Join(Dir(), "now-playing.json") }
 func ArtCacheDir() string    { return filepath.Join(Dir(), "cache", "art") }
 func RatingsPath() string    { return filepath.Join(Dir(), "ratings.json") }
+func WebDir() string         { return filepath.Join(Dir(), "web") }
+func WebCacheDir() string    { return filepath.Join(Dir(), "cache", "web") }
 
 // StatsPath is the encrypted listening-stats database, in a folder only
 // you can open.
@@ -92,6 +94,8 @@ type Config struct {
 	// Stats records every play in an encrypted database on this machine,
 	// for the year in review. "" (default) records, "off" doesn't.
 	Stats string `json:"stats,omitempty"`
+	// Web serves the player to browsers on your network. Toggle it with w.
+	Web Web `json:"web"`
 	// Hooks run commands on playback events, in addition to executables in
 	// ~/.kyro/hooks.
 	Hooks []Hook `json:"hooks,omitempty"`
@@ -128,6 +132,17 @@ type Audio struct {
 	Mpv string `json:"mpv,omitempty"`
 	// Extra mpv flags, for experts.
 	Extra []string `json:"extra,omitempty"`
+}
+
+// Web is the web player: a remote and a speaker for phones, TVs and
+// other computers on the same network.
+type Web struct {
+	Enabled bool `json:"enabled"`
+	// Port defaults to 5976, "kyro" on a phone keypad.
+	Port int `json:"port,omitempty"`
+	// Name is what pages call this computer ("" = its name in System
+	// Settings).
+	Name string `json:"name,omitempty"`
 }
 
 // Hook runs Command (through sh -c) when Event happens. Event is one of

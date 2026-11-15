@@ -12,7 +12,9 @@ import (
 	"io"
 	"log/slog"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"runtime"
 	"slices"
 	"strconv"
 	"strings"
@@ -31,6 +33,7 @@ import (
 	"github.com/karim-w/slop/apps/kyro/internal/ratings"
 	"github.com/karim-w/slop/apps/kyro/internal/stats"
 	"github.com/karim-w/slop/apps/kyro/internal/ui"
+	"github.com/karim-w/slop/apps/kyro/internal/web"
 	"github.com/karim-w/slop/pkg/domain/buildinfo"
 	"github.com/karim-w/slop/pkg/domain/theme"
 	"github.com/karim-w/slop/pkg/infra/keychain"
@@ -48,7 +51,8 @@ usage:
                                  what is playing, e.g. --format '{{.Artist}} - {{.Title}}'
   kyro ctl COMMAND [ARG]         toggle, play, pause, next, prev, stop,
                                  seek ±SECONDS, volume ±N, shuffle, repeat,
-                                 love, rate 0-5, sound [MODE]
+                                 love, rate 0-5, sound [MODE],
+                                 output local|NAME (where the song plays)
   kyro listen                    stream playback events as JSON lines
   kyro playlists                 list playlists
   kyro playlist export NAME DEST copy a playlist out (iTunes / Music can import it)
@@ -149,13 +153,16 @@ func tui(args []string) error {
 		return fmt.Errorf("reading %s: %w", home.LibraryPath(), err)
 	}
 
-	var eng engine.Engine
+	var local engine.Engine
 	mpv, engErr := engine.StartMpv(cfg.Audio, cfg.Volume)
 	if engErr == nil {
-		eng = mpv
+		local = mpv
 	} else {
 		log.Error("audio engine", "err", engErr)
 	}
+	// The router plays through this computer or a browser speaker.
+	name := computerName(cfg.Web.Name)
+	router := engine.NewRouter("local", name, local, cfg.Volume, engErr)
 
 	rs, err := ratings.Open(home.RatingsPath())
 	if err != nil {
@@ -173,13 +180,9 @@ func tui(args []string) error {
 		}()
 	}
 	disp := &hooks.Dispatcher{Dir: home.HooksDir(), Commands: cfg.Hooks, StatePath: home.NowPlayingPath(), Log: log}
-	model := ui.New(ui.Deps{
-		Config: cfg, Library: lib, Playlists: playlist.Store{Dir: home.PlaylistsDir()},
-		Engine: eng, EngineErr: engErr, Hooks: disp, Ratings: rs, Stats: st, Log: log, ThemeName: *themeName,
-	})
-	prog := tea.NewProgram(model)
-
-	srv, err := ipc.Listen(home.SocketPath(), func(r ipc.Request) ipc.Response {
+	var prog *tea.Program
+	// do runs a control command on the UI goroutine, which owns the player.
+	do := func(r ipc.Request) ipc.Response {
 		reply := make(chan ipc.Response, 1)
 		prog.Send(ui.IPCMsg{Req: r, Reply: reply})
 		select {
@@ -188,7 +191,20 @@ func tui(args []string) error {
 		case <-time.After(3 * time.Second):
 			return ipc.Response{Error: "kyro is busy"}
 		}
+	}
+	mpvBin, _ := engine.MpvPath(cfg.Audio.Mpv)
+	webSrv := web.New(web.Deps{
+		Library: lib, Playlists: playlist.Store{Dir: home.PlaylistsDir()}, Ratings: rs, Router: router, Do: do,
+		Mpv: mpvBin, Dir: home.WebDir(), CacheDir: home.WebCacheDir(), Name: name, Log: log,
 	})
+	model := ui.New(ui.Deps{
+		Config: cfg, Library: lib, Playlists: playlist.Store{Dir: home.PlaylistsDir()},
+		Engine: router, EngineErr: engErr, Hooks: disp, Ratings: rs, Stats: st, Log: log, ThemeName: *themeName,
+		Router: router, Web: webSrv,
+	})
+	prog = tea.NewProgram(model)
+
+	srv, err := ipc.Listen(home.SocketPath(), do)
 	switch {
 	case errors.Is(err, ipc.ErrRunning):
 		log.Warn("control socket in use by another kyro; this one runs without it")
@@ -200,11 +216,29 @@ func tui(args []string) error {
 	}
 
 	_, err = prog.Run()
-	if mpv != nil {
-		mpv.Close()
-	}
+	webSrv.Stop()
+	router.Close()
 	disp.Wait()
 	return err
+}
+
+// computerName is what the web player calls this computer: the name in
+// config, else the one in System Settings, else the host name.
+func computerName(configured string) string {
+	if configured != "" {
+		return configured
+	}
+	if runtime.GOOS == "darwin" {
+		if out, err := exec.Command("scutil", "--get", "ComputerName").Output(); err == nil {
+			if n := strings.TrimSpace(string(out)); n != "" {
+				return n
+			}
+		}
+	}
+	if h, err := os.Hostname(); err == nil && h != "" {
+		return strings.TrimSuffix(h, ".local")
+	}
+	return "This computer"
 }
 
 // openLog writes to ~/.kyro/kyro.log when KYRO_LOG is set (a TUI owns the
@@ -386,7 +420,7 @@ func clock(s float64) string {
 
 func ctlCmd(args []string) error {
 	if len(args) == 0 {
-		return errors.New("usage: kyro ctl toggle|play|pause|next|prev|stop|seek ±S|volume ±N|shuffle|repeat|love|rate N|sound [MODE]")
+		return errors.New("usage: kyro ctl toggle|play|pause|next|prev|stop|seek ±S|volume ±N|shuffle|repeat|love|rate N|sound [MODE]|output local|NAME")
 	}
 	req := ipc.Request{Cmd: args[0]}
 	if len(args) > 1 {
